@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH << File.dirname(__FILE__) + '/lib'
+require 'fizz_buzzer'
+
+app = FizzBuzzer::App.new
+
+input = nil
+loop do
+  res = app.call(input)
+  res.apply(Kernel)
+  input = gets
+end
