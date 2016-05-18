@@ -7,10 +7,12 @@ module FizzBuzzer::Modes
       @processer = FizzBuzzNumber
     end
 
-    def execute(app, ui)
+    def execute(app, ui, history)
       input = ui.input('fizz-buzz')
       return finish(app) if abort?(input)
-      fizzbuzz(input, ui)
+      result = fizzbuzz(input)
+      ui.output("#{result}\n")
+      history.append({ input: input, result: "#{result}" })
     end
 
     private
@@ -23,10 +25,9 @@ module FizzBuzzer::Modes
         app.transit_to!(:prompt)
       end
 
-      def fizzbuzz(input, ui)
+      def fizzbuzz(input)
         processer = @processer.new(input.to_i)
-        result = processer.fizzbuzz
-        ui.output("#{result}\n")
+        processer.fizzbuzz
       end
   end
 end
