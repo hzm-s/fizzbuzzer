@@ -1,7 +1,7 @@
 module FizzBuzzer::Modes
   class Prompt
 
-    def execute(app, ui)
+    def execute(app, ui, _ = nil)
       case receive_input_as_number(ui)
       when 0
         app.terminate!

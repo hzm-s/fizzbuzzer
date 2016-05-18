@@ -1,9 +1,10 @@
 module FizzBuzzer
   class App
 
-    def initialize(ui, modes = {})
-      @ui = ui
+    def initialize(modes = {}, ui)
       @modes = modes
+      @ui = ui
+      @history = History.new
       @current_mode = nil
       @running = false
     end
@@ -19,7 +20,7 @@ module FizzBuzzer
     end
 
     def continue!
-      @current_mode.execute(self, @ui)
+      @current_mode.execute(self, @ui, @history)
     end
 
     def transit_to!(mode_name)

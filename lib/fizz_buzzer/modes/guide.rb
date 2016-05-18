@@ -1,7 +1,7 @@
 module FizzBuzzer::Modes
   class Guide
 
-    def execute(app, ui)
+    def execute(app, ui, _ = nil)
       ui.output <<-EOD
 メニューを選択してください
 1: FizzBuzzをスタート

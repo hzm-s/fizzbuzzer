@@ -8,7 +8,7 @@ module FizzBuzzer
         prompt: FizzBuzzer::Modes::Prompt.new,
         fizz_buzz: FizzBuzzer::Modes::FizzBuzz.new,
       }
-      @app = App.new(ui, modes)
+      @app = App.new(modes, ui)
     end
 
     def start
