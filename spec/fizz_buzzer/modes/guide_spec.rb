@@ -5,9 +5,9 @@ module FizzBuzzer
     it do
       mode = described_class.new
       ui = UISpy.new
-      app = AppSpy.new(ui)
+      app = AppSpy.new
 
-      mode.execute(app)
+      mode.execute(app, ui)
 
       expect(ui.buffer).to eq(<<-EOD
 メニューを選択してください

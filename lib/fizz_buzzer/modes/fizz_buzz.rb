@@ -7,16 +7,26 @@ module FizzBuzzer::Modes
       @processer = FizzBuzzNumber
     end
 
-    def execute(app)
-      input = app.input('fizz-buzz')
-      if input =~ /^\d+$/
-        fbn = @processer.new(input.to_i)
-        result = fbn.fizzbuzz
+    def execute(app, ui)
+      input = ui.input('fizz-buzz')
+      return finish(app) if abort?(input)
+      fizzbuzz(input, ui)
+    end
 
-        app.output("#{result}\n")
-      else
+    private
+
+      def abort?(input)
+        /^\d+$/.match(input).!
+      end
+
+      def finish(app)
         app.transit_to!(:prompt)
       end
-    end
+
+      def fizzbuzz(input, ui)
+        processer = @processer.new(input.to_i)
+        result = processer.fizzbuzz
+        ui.output("#{result}\n")
+      end
   end
 end
