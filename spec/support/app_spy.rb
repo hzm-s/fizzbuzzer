@@ -1,9 +1,8 @@
 class AppSpy
-  attr_reader :content, :mode, :terminated
+  attr_reader :mode, :terminated
 
-  def initialize(input = nil)
-    @input = input.to_s
-    @content = nil
+  def initialize(ui, _ = nil)
+    @ui = ui
     @mode = nil
     @terminated = false
   end
@@ -13,11 +12,11 @@ class AppSpy
   end
 
   def input(*args)
-    @input
+    @ui.input
   end
 
   def output(content)
-    @content = content
+    @ui.output(content)
   end
 
   def transit_to!(mode)

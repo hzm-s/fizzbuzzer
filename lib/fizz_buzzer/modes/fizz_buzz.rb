@@ -12,6 +12,7 @@ module FizzBuzzer::Modes
       if input =~ /^\d+$/
         fbn = @processer.new(input.to_i)
         result = fbn.fizzbuzz
+
         app.output("#{result}\n")
       else
         app.transit_to!(:prompt)

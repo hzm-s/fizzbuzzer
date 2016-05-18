@@ -1,17 +1,20 @@
 require 'spec_helper'
 
-describe FizzBuzzer::Modes::Guide do
-  it do
-    mode = described_class.new
-    app = AppSpy.new
+module FizzBuzzer
+  describe Modes::Guide do
+    it do
+      mode = described_class.new
+      ui = UISpy.new
+      app = AppSpy.new(ui)
 
-    mode.execute(app)
+      mode.execute(app)
 
-    expect(app.content).to eq(<<-EOD
+      expect(ui.buffer).to eq(<<-EOD
 メニューを選択してください
 1: FizzBuzzをスタート
 0: 終了
-    EOD
-    )
+      EOD
+      )
+    end
   end
 end

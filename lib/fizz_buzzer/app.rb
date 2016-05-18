@@ -1,7 +1,7 @@
 module FizzBuzzer
   class App
 
-    def initialize(ui, modes)
+    def initialize(ui, storage = {}, modes = {})
       @ui = ui
       @modes = modes
       @current_mode = nil
@@ -36,6 +36,10 @@ module FizzBuzzer
 
     def output(content)
       @ui.output(content)
+    end
+
+    def store(key, value)
+      @storage[key] = value
     end
 
     def running?
