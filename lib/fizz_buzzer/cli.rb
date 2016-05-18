@@ -6,8 +6,8 @@ module FizzBuzzer
       @output = output
     end
 
-    def input
-      output('> ')
+    def input(prefix = '')
+      output("#{prefix}> ")
       @input.gets.chomp
     end
 
