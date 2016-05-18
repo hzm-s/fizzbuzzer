@@ -7,7 +7,7 @@ module FizzBuzzer::Modes
 1: FizzBuzzをスタート
 0: 終了
       EOD
-      app.transit_to!(Prompt.new)
+      app.transit_to!(:prompt)
     end
   end
 end

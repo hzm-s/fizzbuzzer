@@ -8,6 +8,10 @@ class AppSpy
     @terminated = false
   end
 
+  def input_as_number(*args)
+    input(*args).to_i
+  end
+
   def input(*args)
     @input
   end

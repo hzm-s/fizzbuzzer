@@ -2,20 +2,12 @@ module FizzBuzzer::Modes
   class Prompt
 
     def execute(app)
-      number = receive_input_as_number(app)
-      case number
+      case app.input_as_number
       when 0
         app.terminate!
       when 1
-        app.transit_to!(FizzBuzz.new)
+        app.transit_to!(:fizz_buzz)
       end
     end
-
-    private
-
-      def receive_input_as_number(app)
-        input = app.input
-        input.to_i
-      end
   end
 end

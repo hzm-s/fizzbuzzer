@@ -3,7 +3,12 @@ module FizzBuzzer
 
     def initialize(input, output)
       ui = CLI.new(input, output)
-      @app = App.new(ui)
+      modes = {
+        guide: FizzBuzzer::Modes::Guide.new,
+        prompt: FizzBuzzer::Modes::Prompt.new,
+        fizz_buzz: FizzBuzzer::Modes::FizzBuzz.new,
+      }
+      @app = App.new(ui, modes)
     end
 
     def start

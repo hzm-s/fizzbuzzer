@@ -16,6 +16,6 @@ describe FizzBuzzer::Modes::FizzBuzz do
 
     mode.execute(app)
     
-    expect(app.mode).to be_instance_of(FizzBuzzer::Modes::Prompt)
+    expect(app.mode).to eq(:prompt)
   end
 end

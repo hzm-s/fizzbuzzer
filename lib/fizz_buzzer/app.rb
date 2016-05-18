@@ -1,15 +1,16 @@
 module FizzBuzzer
   class App
 
-    def initialize(ui)
+    def initialize(ui, modes)
       @ui = ui
+      @modes = modes
+      @current_mode = nil
       @running = false
-      @mode = nil
     end
 
     def boot!
       @running = true
-      transit_to!(Modes::Guide.new)
+      transit_to!(:guide)
       continue!
     end
 
@@ -18,15 +19,19 @@ module FizzBuzzer
     end
 
     def continue!
-      @mode.execute(self)
+      @current_mode.execute(self)
     end
 
-    def transit_to!(mode)
-      @mode = mode
+    def transit_to!(mode_name)
+      @current_mode = @modes[mode_name]
     end
 
     def input(*args)
       @ui.input(*args)
+    end
+
+    def input_as_number(*args)
+      input(*args).to_i
     end
 
     def output(content)
