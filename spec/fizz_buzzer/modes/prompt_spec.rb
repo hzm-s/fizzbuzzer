@@ -8,7 +8,7 @@ module FizzBuzzer
       app = AppSpy.new
 
       mode.execute(app, ui)
-      
+
       expect(app.terminated).to be_truthy
     end
 
@@ -18,7 +18,7 @@ module FizzBuzzer
       app = AppSpy.new
 
       mode.execute(app, ui)
-      
+
       expect(app.mode).to eq(:fizz_buzz)
     end
   end

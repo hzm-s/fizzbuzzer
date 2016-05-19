@@ -8,7 +8,7 @@ module FizzBuzzer
       history = HistorySpy.new
 
       mode.execute(nil, ui, history)
-      
+
       expect(ui.buffer).to eq("fizzbuzz\n")
     end
 
@@ -18,7 +18,7 @@ module FizzBuzzer
       app = AppSpy.new
 
       mode.execute(app, ui, nil)
-      
+
       expect(app.mode).to eq(:prompt)
     end
 
@@ -30,7 +30,7 @@ module FizzBuzzer
       mode.execute(nil, ui, history)
       mode.execute(nil, ui, history)
       mode.execute(nil, ui, history)
-      
+
       expect(history.to_a).to eq([
         { input: '1', result: '1' },
         { input: '3', result: 'fizz' },
