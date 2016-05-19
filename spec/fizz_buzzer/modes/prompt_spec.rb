@@ -19,6 +19,7 @@ module FizzBuzzer
 
       mode.execute(app, ui)
 
+      expect(ui.buffer).to eq("整数を入力してください\n")
       expect(app.mode).to eq(:fizz_buzz)
     end
   end
