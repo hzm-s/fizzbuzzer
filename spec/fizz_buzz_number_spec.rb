@@ -7,7 +7,7 @@ describe FizzBuzzNumber do
     fbn.fizzbuzz
   end
 
-  context 'gievn 0' do
+  context 'given 0' do
     let(:number) { 0 }
     it { is_expected.to eq(0) }
   end
