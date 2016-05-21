@@ -14,14 +14,9 @@ class App
   private
 
     def interact
-      return unless action = detect_action
+      return unless action = @menu.detect_action(@io)
       action.execute(@io, @history)
       interact
-    end
-
-    def detect_action
-      input = @io.receive
-      @menu.detect_action(input)
     end
 
     def boot
