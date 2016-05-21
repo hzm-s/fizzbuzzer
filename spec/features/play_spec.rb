@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe 'Play fizz buzz' do
-  let(:modes) { ModeContainer.setup }
-
   it do
     io = IOSpy.new(
       1, # fizzbuzz mode
@@ -15,10 +13,9 @@ describe 'Play fizz buzz' do
       15,
       0, # quit
     )
-    ui = UI.new(io)
-    app = App.new(ui, modes)
 
-    app.start!
+    app = App.new(io)
+    app.start
 
     expect(io.buffers).to eq([
       Messages.usage,

@@ -1,30 +1,30 @@
 class App
 
-  def initialize(ui, modes)
-    @ui = ui
-    @modes = modes
+  def initialize(io)
+    @io = io
+    @menu = Menu.new
     @history = History.new
   end
 
-  def start!
+  def start
     boot
-    continue!
-  end
-
-  def continue!
-    @modes.execute_current(@ui, @history)
-    return unless running?
-    continue!
+    interact
   end
 
   private
 
-    def boot
-      @ui.output(Messages.usage)
-      @modes.set_current(:prompt)
+    def interact
+      return unless action = detect_action
+      action.execute(@io, @history)
+      interact
     end
 
-    def running?
-      @modes.current
+    def detect_action
+      input = @io.receive
+      @menu.detect_action(input)
+    end
+
+    def boot
+      @io.output(Messages.usage)
     end
 end

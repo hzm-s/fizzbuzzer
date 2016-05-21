@@ -4,7 +4,6 @@ $LOAD_PATH << File.dirname(__FILE__) + '/lib'
 require 'fizz_buzzer'
 
 io = StdIO.new($stdin, $stdout)
-modes = ModeContainer.setup
 
-app = App.new(io, modes)
-app.start!
+app = App.new(io)
+app.start

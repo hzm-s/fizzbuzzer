@@ -1,18 +1,22 @@
 require 'fizz_buzz_number'
 
-module Modes
+module Actions
   class FizzBuzz
 
     def initialize
       @processer = FizzBuzzNumber
     end
 
-    def execute(app, io, history)
-      input = io.receive
+    def execute(io, history)
+      input = prompt(io)
       result = fizzbuzz(input)
       io.output("#{result}\n")
       history.append({ input: input, result: "#{result}" })
-      app.transit_to!(:prompt)
+    end
+
+    def prompt(io)
+      io.output("整数を入力してください\n")
+      input = io.receive
     end
 
     private

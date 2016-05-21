@@ -2,8 +2,18 @@ require 'delegate'
 
 require 'std_io'
 require 'app'
-require 'ui'
+require 'menu'
 require 'history'
-require 'messages'
-require 'mode_container'
-require 'modes'
+require 'actions'
+
+module Messages
+  module_function
+
+  def usage
+    <<-EOU
+メニューを選択してください
+1: FizzBuzzをスタート
+0: 終了
+    EOU
+  end
+end
