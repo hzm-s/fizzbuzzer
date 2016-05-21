@@ -3,24 +3,24 @@ require 'spec_helper'
 module FizzBuzzer
   describe Modes::Prompt do
     it '0が入力されたら終了する' do
-      mode = described_class.new
       ui = UISpy.new(0)
-      app = AppSpy.new
+      modes = ModeSpy.new
 
-      mode.execute(app, ui)
+      mode = described_class.new
+      mode.execute(modes, ui)
 
-      expect(app.terminated).to be_truthy
+      expect(modes.current).to be_nil
     end
 
     it '1が入力されたらFizzBuzzを開始する' do
-      mode = described_class.new
       ui = UISpy.new(1)
-      app = AppSpy.new
+      modes = ModeSpy.new
 
-      mode.execute(app, ui)
+      mode = described_class.new
+      mode.execute(modes, ui)
 
       expect(ui.buffer).to eq("整数を入力してください\n")
-      expect(app.mode).to eq(:fizz_buzz)
+      expect(modes.current).to eq(:fizz_buzz)
     end
   end
 end

@@ -3,11 +3,11 @@ require 'spec_helper'
 module FizzBuzzer
   describe Modes::Guide do
     it '操作方法を表示して入力待ちモードにする' do
-      mode = described_class.new
       ui = UISpy.new
-      app = AppSpy.new
+      modes = ModeSpy.new
 
-      mode.execute(app, ui)
+      mode = described_class.new
+      mode.execute(modes, ui)
 
       expect(ui.buffer).to eq(<<-EOD
 メニューを選択してください
@@ -15,7 +15,7 @@ module FizzBuzzer
 0: 終了
       EOD
       )
-      expect(app.mode).to eq(:prompt)
+      expect(modes.current).to eq(:prompt)
     end
   end
 end
