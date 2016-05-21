@@ -9,7 +9,6 @@ class ModeContainer < SimpleDelegator
 
       def default
         setup(
-          guide: Modes::Guide.new,
           prompt: Modes::Prompt.new,
           fizz_buzz: Modes::FizzBuzz.new,
         )

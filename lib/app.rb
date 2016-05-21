@@ -7,7 +7,7 @@ class App
   end
 
   def start!
-    @modes.set_current(:guide)
+    boot
     continue!
   end
 
@@ -18,6 +18,11 @@ class App
   end
 
   private
+
+    def boot
+      @ui.output(Messages.usage)
+      @modes.set_current(:prompt)
+    end
 
     def running?
       @modes.current
