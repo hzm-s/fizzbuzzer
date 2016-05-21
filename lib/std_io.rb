@@ -1,11 +1,11 @@
-class CLI
+class StdIO
 
   def initialize(input, output)
     @input = input
     @output = output
   end
 
-  def input(prefix = '')
+  def receive(prefix = '')
     output("#{prefix}> ")
     @input.gets.chomp
   end

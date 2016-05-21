@@ -6,7 +6,7 @@ class IOSpy
     @buffers = []
   end
 
-  def input(*args)
+  def receive(*args)
     @inputs.shift
   end
 

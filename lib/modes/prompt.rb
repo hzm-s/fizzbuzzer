@@ -2,7 +2,7 @@ module Modes
   class Prompt
 
     def execute(app, io, _ = nil)
-      case io.input
+      case io.receive
       when '0'
         app.terminate!
       when '1'

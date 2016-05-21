@@ -8,7 +8,7 @@ module Modes
     end
 
     def execute(app, io, history)
-      input = io.input
+      input = io.receive
       result = fizzbuzz(input)
       io.output("#{result}\n")
       history.append({ input: input, result: "#{result}" })
