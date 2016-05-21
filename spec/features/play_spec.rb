@@ -15,7 +15,8 @@ describe 'Play fizz buzz' do
       15,
       0, # quit
     )
-    app = App.new(io, modes)
+    ui = UI.new(io)
+    app = App.new(ui, modes)
 
     app.start!
 
