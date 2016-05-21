@@ -1,7 +1,7 @@
 class App
 
-  def initialize(ui, modes)
-    @ui = ui
+  def initialize(io, modes)
+    @io = io
     @modes = modes
     @history = History.new
   end
@@ -12,7 +12,7 @@ class App
   end
 
   def continue!
-    @modes.execute_current(@ui, @history)
+    @modes.execute_current(@io, @history)
     return unless running?
     continue!
   end
@@ -20,7 +20,7 @@ class App
   private
 
     def boot
-      @ui.output(Messages.usage)
+      @io.output(Messages.usage)
       @modes.set_current(:prompt)
     end
 

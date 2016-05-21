@@ -22,8 +22,8 @@ class ModeContainer < SimpleDelegator
     @current = nil
   end
 
-  def execute_current(ui, history)
-    @current.execute(self, ui, history)
+  def execute_current(io, history)
+    @current.execute(self, io, history)
   end
 
   def transit_to!(mode_name)

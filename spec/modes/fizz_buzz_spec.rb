@@ -3,25 +3,25 @@ require 'spec_helper'
 module Modes
   describe FizzBuzz do
     it '数字が入力されたらFizzBuzzを実行する' do
-      ui = UISpy.new(15)
+      io = IOSpy.new(15)
       modes = ModeSpy.new
       history = HistorySpy.new
 
       mode = described_class.new
-      mode.execute(modes, ui, history)
+      mode.execute(modes, io, history)
 
-      expect(ui.buffer).to eq("fizzbuzz\n")
+      expect(io.buffer).to eq("fizzbuzz\n")
     end
 
     it '入力された数字と結果を保持する' do
-      ui = UISpy.new(1, 3, 5)
+      io = IOSpy.new(1, 3, 5)
       modes = ModeSpy.new
       history = HistorySpy.new
 
       mode = described_class.new
-      mode.execute(modes, ui, history)
-      mode.execute(modes, ui, history)
-      mode.execute(modes, ui, history)
+      mode.execute(modes, io, history)
+      mode.execute(modes, io, history)
+      mode.execute(modes, io, history)
 
       expect(history.to_a).to eq([
         { input: '1', result: '1' },

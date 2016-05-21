@@ -7,10 +7,10 @@ module Modes
       @processer = FizzBuzzNumber
     end
 
-    def execute(app, ui, history)
-      input = ui.input
+    def execute(app, io, history)
+      input = io.input
       result = fizzbuzz(input)
-      ui.output("#{result}\n")
+      io.output("#{result}\n")
       history.append({ input: input, result: "#{result}" })
       app.transit_to!(:prompt)
     end

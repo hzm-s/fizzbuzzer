@@ -4,9 +4,9 @@ describe 'Play fizz buzz' do
   let(:modes) { ModeContainer.setup }
 
   it do
-    ui = UISpy.new(
+    io = IOSpy.new(
       1, # fizzbuzz mode
-      2, 
+      2,
       1, # fizzbuzz mode
       3,
       1, # fizzbuzz mode
@@ -15,11 +15,11 @@ describe 'Play fizz buzz' do
       15,
       0, # quit
     )
-    app = App.new(ui, modes)
+    app = App.new(io, modes)
 
     app.start!
 
-    expect(ui.buffers).to eq([
+    expect(io.buffers).to eq([
       Messages.usage,
       "整数を入力してください\n",
       "2\n",
