@@ -1,10 +1,4 @@
 class History < SimpleDelegator
-  Log = Struct.new(:input, :result) do
-
-    def to_s
-      "#{input} => #{result}"
-    end
-  end
 
   def initialize(logs = [])
     super([])
@@ -17,5 +11,12 @@ class History < SimpleDelegator
 
   def to_s
     map(&:to_s).join("\n")
+  end
+
+  Log = Struct.new(:input, :result) do
+
+    def to_s
+      "#{input} => #{result}"
+    end
   end
 end
