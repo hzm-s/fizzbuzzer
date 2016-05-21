@@ -1,22 +1,24 @@
-class History < SimpleDelegator
+require 'yaml'
 
-  def initialize(logs = [])
-    super([])
-    logs.each { |l| self.add(l) }
+class History < SimpleDelegator
+  class << self
+    attr_accessor :store
   end
 
-  def add(input:, result:)
-    self << Log.new(input, result)
+  def initialize(logs = [])
+    super(logs)
+  end
+
+  def add(log)
+    self << log
+  end
+
+  def save
+    self.class.store.write('/tmp/fizz_buzzer.yml', to_yaml)
   end
 
   def to_s
-    map(&:to_s).join("\n")
-  end
-
-  Log = Struct.new(:input, :result) do
-
-    def to_s
-      "#{input} => #{result}"
-    end
+    map { |log| "#{log[:input]} => #{log[:result]}" }
+      .join("\n")
   end
 end

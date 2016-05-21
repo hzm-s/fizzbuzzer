@@ -13,6 +13,8 @@ module Messages
     <<-EOU
 メニューを選択してください
 1: FizzBuzzをスタート
+2: これまでのFizzBuzzの履歴を見る
+3: これまでのFizzBuzzの履歴を保存する
 0: 終了
     EOU
   end
