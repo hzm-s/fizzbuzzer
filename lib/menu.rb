@@ -9,6 +9,8 @@ class Menu
       Actions::FizzBuzz.new
     when 2
       Actions::ShowHistory.new
+    when 3
+      Actions::SaveHistory.new
     end
   end
 end

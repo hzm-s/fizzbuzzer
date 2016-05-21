@@ -3,6 +3,8 @@
 $LOAD_PATH << File.dirname(__FILE__) + '/lib'
 require 'fizz_buzzer'
 
+History.store = File
+
 ui = CLI.new($stdin, $stdout)
 app = App.new(ui)
 app.start
