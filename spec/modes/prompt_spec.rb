@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-module FizzBuzzer
-  describe Modes::Prompt do
+module Modes
+  describe Prompt do
     it '0が入力されたら終了する' do
       ui = UISpy.new(0)
       modes = ModeSpy.new

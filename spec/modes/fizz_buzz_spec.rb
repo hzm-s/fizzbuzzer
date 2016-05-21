@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-module FizzBuzzer
-  describe Modes::FizzBuzz do
+module Modes
+  describe FizzBuzz do
     it '数字が入力されたらFizzBuzzを実行する' do
       ui = UISpy.new(15)
       modes = ModeSpy.new

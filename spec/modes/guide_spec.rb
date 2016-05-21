@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-module FizzBuzzer
-  describe Modes::Guide do
+module Modes
+  describe Guide do
     it '操作方法を表示して入力待ちモードにする' do
       ui = UISpy.new
       modes = ModeSpy.new

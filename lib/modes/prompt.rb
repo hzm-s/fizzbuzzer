@@ -1,4 +1,4 @@
-module FizzBuzzer::Modes
+module Modes
   class Prompt
 
     def execute(app, ui, _ = nil)

@@ -1,6 +1,6 @@
 require 'fizz_buzz_number'
 
-module FizzBuzzer::Modes
+module Modes
   class FizzBuzz
 
     def initialize
