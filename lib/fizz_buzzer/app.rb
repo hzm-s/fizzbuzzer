@@ -1,9 +1,9 @@
 module FizzBuzzer
   class App
 
-    def initialize(modes = {}, ui)
-      @modes = modes
+    def initialize(ui, modes = {})
       @ui = ui
+      @modes = modes
       @history = History.new
       @current_mode = nil
       @running = false

@@ -3,5 +3,13 @@
 $LOAD_PATH << File.dirname(__FILE__) + '/lib'
 require 'fizz_buzzer'
 
-process = FizzBuzzer::Process.new($stdin, $stdout)
+ui = FizzBuzzer::CLI.new($stdin, $stdout)
+
+modes = {
+  guide: FizzBuzzer::Modes::Guide.new,
+  prompt: FizzBuzzer::Modes::Prompt.new,
+  fizz_buzz: FizzBuzzer::Modes::FizzBuzz.new,
+}
+
+process = FizzBuzzer::Process.new(ui, modes)
 process.start
