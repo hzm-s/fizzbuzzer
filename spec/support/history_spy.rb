@@ -2,11 +2,11 @@ require 'delegate'
 
 class HistorySpy < SimpleDelegator
 
-  def initialize
-    super([])
+  def initialize(logs = [])
+    super(logs)
   end
 
-  def append(data)
+  def add(data)
     self << data
   end
 end

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Play FizzBuzz' do
+describe 'Show FizzBuzz history' do
   it do
     ui = TestUI.new(
       1, # fizzbuzz mode
@@ -11,6 +11,7 @@ describe 'Play FizzBuzz' do
       5,
       1, # fizzbuzz mode
       15,
+      2, # show history mode
       0, # quit
     )
 
@@ -26,7 +27,13 @@ describe 'Play FizzBuzz' do
       "整数を入力してください\n",
       "buzz\n",
       "整数を入力してください\n",
-      "fizzbuzz\n"
+      "fizzbuzz\n",
+      <<-EOH
+2 => 2
+3 => fizz
+5 => buzz
+15 => fizzbuzz
+      EOH
     ])
   end
 end
