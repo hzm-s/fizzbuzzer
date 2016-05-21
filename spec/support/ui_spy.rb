@@ -1,9 +1,9 @@
 class UISpy
-  attr_reader :buffer
+  attr_reader :buffers
 
   def initialize(*inputs)
     @inputs = inputs.map(&:to_s)
-    @buffer = nil
+    @buffers = []
   end
 
   def input(*args)
@@ -11,6 +11,10 @@ class UISpy
   end
 
   def output(content)
-    @buffer = content
+    @buffers << content
+  end
+
+  def buffer
+    @buffers.last
   end
 end
