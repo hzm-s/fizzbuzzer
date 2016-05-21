@@ -1,13 +1,13 @@
 require 'spec_helper'
 
 module Actions
-  xdescribe FizzBuzz do
+  describe FizzBuzz do
     it 'FizzBuzzを実行する' do
       io = IOSpy.new(15)
       history = HistorySpy.new
 
-      mode = described_class.new
-      mode.execute(io, history)
+      action = described_class.new
+      action.run(io, history)
 
       expect(io.buffer).to eq("fizzbuzz\n")
     end
@@ -16,10 +16,10 @@ module Actions
       io = IOSpy.new(1, 3, 5)
       history = HistorySpy.new
 
-      mode = described_class.new
-      mode.execute(io, history)
-      mode.execute(io, history)
-      mode.execute(io, history)
+      action = described_class.new
+      action.run(io, history)
+      action.run(io, history)
+      action.run(io, history)
 
       expect(history.to_a).to eq([
         { input: '1', result: '1' },

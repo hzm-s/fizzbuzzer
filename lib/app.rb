@@ -15,7 +15,7 @@ class App
 
     def interact
       return unless action = @menu.detect_action(@io)
-      action.execute(@io, @history)
+      action.run(@io, @history)
       interact
     end
 

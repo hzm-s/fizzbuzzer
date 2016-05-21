@@ -7,7 +7,7 @@ module Actions
       @processer = FizzBuzzNumber
     end
 
-    def execute(io, history)
+    def run(io, history)
       input = prompt(io)
       result = fizzbuzz(input)
       io.output("#{result}\n")
