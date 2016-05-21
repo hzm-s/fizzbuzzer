@@ -3,8 +3,8 @@
 $LOAD_PATH << File.dirname(__FILE__) + '/lib'
 require 'fizz_buzzer'
 
-ui = FizzBuzzer::CLI.new($stdin, $stdout)
-modes = FizzBuzzer::ModeContainer.setup
+ui = CLI.new($stdin, $stdout)
+modes = ModeContainer.setup
 
-app = FizzBuzzer::App.new(ui, modes)
+app = App.new(ui, modes)
 app.start!
