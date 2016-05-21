@@ -4,12 +4,7 @@ $LOAD_PATH << File.dirname(__FILE__) + '/lib'
 require 'fizz_buzzer'
 
 ui = FizzBuzzer::CLI.new($stdin, $stdout)
-
-modes = {
-  guide: FizzBuzzer::Modes::Guide.new,
-  prompt: FizzBuzzer::Modes::Prompt.new,
-  fizz_buzz: FizzBuzzer::Modes::FizzBuzz.new,
-}
+modes = FizzBuzzer::ModeContainer.setup
 
 app = FizzBuzzer::App.new(ui, modes)
 app.start!
