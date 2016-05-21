@@ -1,4 +1,4 @@
-class StdIO
+class CLI
 
   def initialize(input, output)
     @input = input

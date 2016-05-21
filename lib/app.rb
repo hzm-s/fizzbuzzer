@@ -1,7 +1,7 @@
 class App
 
-  def initialize(io)
-    @io = io
+  def initialize(ui)
+    @ui = ui
     @menu = Menu.new
     @history = History.new
   end
@@ -14,12 +14,12 @@ class App
   private
 
     def interact
-      return unless action = @menu.detect_action(@io)
-      action.run(@io, @history)
+      return unless action = @menu.detect_action(@ui)
+      action.run(@ui, @history)
       interact
     end
 
     def boot
-      @io.output(Messages.usage)
+      @ui.output(Messages.usage)
     end
 end

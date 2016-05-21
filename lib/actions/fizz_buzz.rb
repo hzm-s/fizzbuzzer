@@ -7,16 +7,16 @@ module Actions
       @processer = FizzBuzzNumber
     end
 
-    def run(io, history)
-      input = prompt(io)
+    def run(ui, history)
+      input = prompt(ui)
       result = fizzbuzz(input)
-      io.output("#{result}\n")
+      ui.output("#{result}\n")
       history.append({ input: input, result: "#{result}" })
     end
 
-    def prompt(io)
-      io.output("整数を入力してください\n")
-      input = io.receive
+    def prompt(ui)
+      ui.output("整数を入力してください\n")
+      input = ui.receive
     end
 
     private

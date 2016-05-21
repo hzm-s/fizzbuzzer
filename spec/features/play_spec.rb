@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Play fizz buzz' do
   it do
-    io = IOSpy.new(
+    ui = TestUI.new(
       1, # fizzbuzz mode
       2,
       1, # fizzbuzz mode
@@ -14,10 +14,10 @@ describe 'Play fizz buzz' do
       0, # quit
     )
 
-    app = App.new(io)
+    app = App.new(ui)
     app.start
 
-    expect(io.buffers).to eq([
+    expect(ui.buffers).to eq([
       Messages.usage,
       "整数を入力してください\n",
       "2\n",

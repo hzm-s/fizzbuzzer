@@ -1,4 +1,4 @@
-class IOSpy
+class TestUI
   attr_reader :buffers
 
   def initialize(*inputs)

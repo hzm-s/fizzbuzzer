@@ -1,6 +1,6 @@
 require 'delegate'
 
-require 'std_io'
+require 'cli'
 require 'app'
 require 'menu'
 require 'history'
