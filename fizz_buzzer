@@ -3,7 +3,6 @@
 $LOAD_PATH << File.dirname(__FILE__) + '/lib'
 require 'fizz_buzzer'
 
-io = StdIO.new($stdin, $stdout)
-
-app = App.new(io)
+ui = CLI.new($stdin, $stdout)
+app = App.new(ui)
 app.start
