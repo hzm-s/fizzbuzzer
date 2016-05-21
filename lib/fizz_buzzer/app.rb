@@ -9,26 +9,34 @@ module FizzBuzzer
       @running = false
     end
 
-    def boot!
-      @running = true
+    def start!
+      boot!
       transit_to!(:guide)
       continue!
     end
 
-    def terminate!
-      @running = false
-    end
-
     def continue!
       @current_mode.execute(self, @ui, @history)
+      return unless running?
+      continue!
     end
 
     def transit_to!(mode_name)
       @current_mode = @modes[mode_name]
     end
 
-    def running?
-      @running
+    def terminate!
+      @running = false
     end
+
+    private
+
+      def boot!
+        @running = true
+      end
+
+      def running?
+        @running
+      end
   end
 end

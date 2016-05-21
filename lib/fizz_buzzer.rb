@@ -1,8 +1,4 @@
-require 'fizz_buzzer/process'
-require 'fizz_buzzer/cli'
-require 'fizz_buzzer/app'
-require 'fizz_buzzer/history'
-require 'fizz_buzzer/modes'
+Dir[File.dirname(__FILE__) + '/fizz_buzzer/*.rb'].each { |f| require f }
 
 module FizzBuzzer
 end

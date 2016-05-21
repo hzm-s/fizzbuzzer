@@ -11,5 +11,5 @@ modes = {
   fizz_buzz: FizzBuzzer::Modes::FizzBuzz.new,
 }
 
-process = FizzBuzzer::Process.new(ui, modes)
-process.start
+app = FizzBuzzer::App.new(ui, modes)
+app.start!
