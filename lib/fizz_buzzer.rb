@@ -1,19 +1,9 @@
 require 'delegate'
 
-require 'cli'
-require 'app'
-require 'menu'
-require 'history'
-require 'actions'
-
-module Messages
-  module_function
-
-  def usage
-    <<-EOU
-メニューを選択してください
-1: FizzBuzzをスタート
-0: 終了
-    EOU
-  end
+module FizzBuzzer
 end
+
+require 'fizz_buzzer/modes'
+require 'fizz_buzzer/messages'
+require 'fizz_buzzer/app'
+require 'fizz_buzzer/cli'
