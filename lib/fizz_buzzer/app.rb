@@ -3,22 +3,22 @@ module FizzBuzzer
 
     def initialize
       @modes = {
-        menu: Modes::Menu.new,
         fizz_buzz: Modes::FizzBuzz.new,
       }
       @current_mode = nil
+      @running = false
+    end
+
+    def usage
+      Messages.usage
     end
 
     def start
-      @current_mode = @modes[:menu]
+      @running = true
     end
 
     def stop
-      @current_mode = nil
-    end
-
-    def prompt
-      @current_mode.prompt
+      @running = false
     end
 
     def change_mode(value)
@@ -30,12 +30,16 @@ module FizzBuzzer
       end
     end
 
+    def prompt
+      @current_mode.prompt
+    end
+
     def call(value)
       @current_mode.call(value)
     end
 
     def running?
-      !@current_mode.nil?
+      @running
     end
   end
 end

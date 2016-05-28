@@ -10,8 +10,8 @@ module FizzBuzzer
     def start
       @app.start
 
-      prompt = @app.prompt
-      @output.print(prompt)
+      usage = @app.usage
+      @output.print(usage)
 
       interact
     end
