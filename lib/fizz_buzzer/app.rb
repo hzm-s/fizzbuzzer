@@ -1,37 +1,41 @@
-require 'fizz_buzz_number'
-
 module FizzBuzzer
   class App
 
     def initialize
       @modes = {
         menu: Modes::Menu.new,
+        fizz_buzz: Modes::FizzBuzz.new,
       }
-      @running = false
+      @current_mode = nil
     end
 
     def start
-      @running = true
+      @current_mode = @modes[:menu]
     end
 
     def stop
-      @running = false
+      @current_mode = nil
     end
 
     def prompt
-      @modes[:menu].prompt
+      @current_mode.prompt
+    end
+
+    def change_mode(value)
+      case value
+      when '1'
+        @current_mode = @modes[:fizz_buzz]
+      when '0'
+        stop
+      end
     end
 
     def call(value)
-      @modes[:menu].call(value)
-    end
-
-    def change_mode
-      @modes[:menu].change_mode(self)
+      @current_mode.call(value)
     end
 
     def running?
-      @running
+      !@current_mode.nil?
     end
   end
 end

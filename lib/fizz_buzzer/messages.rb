@@ -10,6 +10,6 @@ module FizzBuzzer::Messages
   end
 
   def fizz_buzz
-    '整数を入力してください'
+    "整数を入力してください\n"
   end
 end

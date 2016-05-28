@@ -4,14 +4,13 @@ module FizzBuzzer
   module Modes
     class FizzBuzz
 
-      def initialize(history)
-        @history = history
+      def prompt
+        Messages.fizz_buzz
       end
 
-      def execute(number)
-        fizz_buzz_number = FizzBuzzNumber.new(number.to_i)
-        result = fizz_buzz_number.fizzbuzz
-        @history << "#{number} => #{result}"
+      def call(value)
+        n = FizzBuzzNumber.new(value.to_i)
+        n.fizzbuzz
       end
     end
   end

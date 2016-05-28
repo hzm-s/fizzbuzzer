@@ -9,23 +9,30 @@ module FizzBuzzer
 
     def start
       @app.start
+
+      prompt = @app.prompt
+      @output.print(prompt)
+
       interact
     end
 
     def interact
+      @output.print('> ')
+      line = @input.gets
+      value = line.chomp
+      @app.change_mode(value)
+
+      return unless @app.running?
+
       prompt = @app.prompt
       @output.print(prompt)
-      @output.print("\n")
       @output.print('> ')
 
       line = @input.gets
       value = line.chomp
       content = @app.call(value)
-      @output.print(content) if content
+      @output.print("#{content}\n")
 
-      @app.change_mode
-
-      return unless @app.running?
       interact
     end
   end
