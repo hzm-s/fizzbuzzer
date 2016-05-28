@@ -9,31 +9,37 @@ module FizzBuzzer
 
     def start
       @app.start
-
-      usage = @app.usage
-      @output.print(usage)
-
       interact
     end
 
     def interact
-      @output.print('> ')
-      line = @input.gets
-      value = line.chomp
-      @app.change_mode(value)
+      input = receive_input_with_message(@app.usage)
+      @app.change_mode(input)
 
-      return unless @app.running?
+      while @app.running?
+        input = receive_input_with_message(@app.prompt)
+        content = @app.call(input)
+        output_with_cr(content)
 
-      prompt = @app.prompt
-      @output.print(prompt)
-      @output.print('> ')
-
-      line = @input.gets
-      value = line.chomp
-      content = @app.call(value)
-      @output.print("#{content}\n")
-
-      interact
+        input = receive_input
+        @app.change_mode(input)
+      end
     end
+
+    private
+
+      def output_with_cr(content)
+        @output.print("#{content}\n")
+      end
+
+      def receive_input_with_message(message)
+        @output.print(message)
+        receive_input
+      end
+
+      def receive_input
+        @output.print('> ')
+        @input.gets.chomp
+      end
   end
 end
