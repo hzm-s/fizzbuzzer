@@ -7,10 +7,7 @@ module FizzBuzzer
       end
 
       def call(value)
-      end
-
-      def change_mode(app)
-        app.stop
+        fail 'do not call'
       end
     end
   end
