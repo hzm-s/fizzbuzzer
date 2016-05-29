@@ -5,9 +5,8 @@ describe 'Quit app' do
     input = InputStub.new(["0\n"])
     output = OutputSpy.new
 
-    app = FizzBuzzer::App.new
-    cli = FizzBuzzer::CLI.new(app, input, output)
-    cli.start
+    app = FizzBuzzer::App.new(input, output)
+    app.start
 
     outputs = output.buffers
     expect(outputs[0]).to eq(

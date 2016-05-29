@@ -1,45 +1,47 @@
+require 'fizz_buzz'
+
 module FizzBuzzer
   class App
 
-    def initialize
-      @modes = {
-        fizz_buzz: Modes::FizzBuzz.new,
-      }
-      @current_mode = nil
-      @running = false
-    end
-
-    def usage
-      Messages.usage
+    def initialize(input, output)
+      @input = input
+      @output = output
+      @stopped = false
+      @fizz_buzz_mode = false
     end
 
     def start
-      @running = true
+      @output.print(Messages.usage)
+      interact
     end
 
-    def stop
-      @running = false
+    def interact
+      if @fizz_buzz_mode
+        fizz_buzz
+      else
+        menu
+      end
+      interact unless @stopped
     end
 
-    def change_mode(value)
+    def menu
+      value = @input.gets.chomp
       case value
-      when '1'
-        @current_mode = @modes[:fizz_buzz]
       when '0'
-        stop
+        @stopped = true
+      when '1'
+        @output.print(Messages.fizz_buzz)
+        @fizz_buzz_mode = true
       end
     end
 
-    def prompt
-      @current_mode.prompt
-    end
-
-    def call(value)
-      @current_mode.call(value)
-    end
-
-    def running?
-      @running
+    def fizz_buzz
+      value = @input.gets.chomp
+      number = value.to_i
+      fbn = FizzBuzz.new(number)
+      result = fbn.try
+      @output.print("#{result}\n")
+      @fizz_buzz_mode = false
     end
   end
 end
