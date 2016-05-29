@@ -3,11 +3,10 @@ require 'fizz_buzz'
 module FizzBuzzer
   class App
 
-    def initialize(input, output)
+    def initialize(input, output, mode = Mode.new)
       @input = input
       @output = output
-      @stopped = false
-      @fizz_buzz_mode = false
+      @mode = mode
     end
 
     def start
@@ -16,32 +15,18 @@ module FizzBuzzer
     end
 
     def interact
-      if @fizz_buzz_mode
-        fizz_buzz
-      else
-        menu
-      end
-      interact unless @stopped
+      content = @mode.call(receive_input)
+      @output.print(content)
+      @mode.change!
+      interact if @mode.have_next?
     end
 
-    def menu
-      value = @input.gets.chomp
-      case value
-      when '0'
-        @stopped = true
-      when '1'
-        @output.print(Messages.fizz_buzz)
-        @fizz_buzz_mode = true
-      end
-    end
+    private
 
-    def fizz_buzz
-      value = @input.gets.chomp
-      number = value.to_i
-      fbn = FizzBuzz.new(number)
-      result = fbn.try
-      @output.print("#{result}\n")
-      @fizz_buzz_mode = false
-    end
+      def receive_input
+        @output.print('> ')
+        value = @input.gets
+        value.chomp
+      end
   end
 end

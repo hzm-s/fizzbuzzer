@@ -3,6 +3,5 @@
 $LOAD_PATH << File.dirname(__FILE__) + '/lib'
 require 'fizz_buzzer'
 
-app = FizzBuzzer::App.new
-cli = FizzBuzzer::CLI.new(app, $stdin, $stdout)
-cli.start
+app = FizzBuzzer::App.new($stdin, $stdout)
+app.start
