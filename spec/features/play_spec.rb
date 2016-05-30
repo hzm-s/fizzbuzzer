@@ -10,8 +10,9 @@ describe 'Play fizzbuzz' do
       "0\n",
     ])
     output = OutputSpy.new
+    ui = FizzBuzzer::UI.new(input, output)
 
-    app = FizzBuzzer::App.new(input, output)
+    app = FizzBuzzer::App.new(ui)
     app.start
 
     outputs = output.buffers
