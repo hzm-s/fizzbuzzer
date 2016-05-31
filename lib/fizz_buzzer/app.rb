@@ -1,13 +1,24 @@
 module FizzBuzzer
   class App
 
-    def initialize(ui, menu = Menu.new)
+    def initialize(ui)
       @ui = ui
-      @menu = menu
+      @play = Play.new
     end
 
     def start
-      @menu.start(@ui)
+      @ui.output(Messages.usage)
+      interact
+    end
+
+    def interact
+      case @ui.receive_as_string
+      when '0'
+        return
+      when '1'
+        @play.run(@ui)
+      end
+      interact
     end
   end
 end

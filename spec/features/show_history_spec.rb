@@ -13,10 +13,10 @@ xdescribe 'Show fizzbuzz history' do
       "0\n"
     ])
     output = OutputSpy.new
+    ui = FizzBuzzer::UI.new(input, output)
 
-    app = FizzBuzzer::App.new
-    cli = FizzBuzzer::CLI.new(app, input, output)
-    cli.start
+    app = FizzBuzzer::App.new(ui)
+    app.start
 
     outputs = output.buffers
     expect(outputs[7]).to eq(

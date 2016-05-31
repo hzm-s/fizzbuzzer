@@ -3,7 +3,7 @@ require 'fizz_buzz'
 module FizzBuzzer
   class Play
 
-    def interact(ui)
+    def run(ui)
       ui.output(Messages.fizz_buzz)
       number = ui.receive_as_number
       fb = FizzBuzz.new(number)
