@@ -6,21 +6,18 @@ module FizzBuzzer
       @output = output
     end
 
-    def output_with_break(content)
-      output("#{content}\n")
-    end
-
     def output(content)
-      @output.print(content)
+      string = content.to_s
+      string += "\n" unless string.end_with?("\n")
+      @output.print(string)
     end
 
-    def receive_as_number
-      value = receive_as_string
-      value.to_i
+    def prompt(message)
+      output(message)
     end
 
-    def receive_as_string
-      output('> ')
+    def receive_input
+      @output.print('> ')
       value = @input.gets
       value.chomp
     end

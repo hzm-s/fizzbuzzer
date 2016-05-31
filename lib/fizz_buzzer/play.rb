@@ -3,12 +3,14 @@ require 'fizz_buzz'
 module FizzBuzzer
   class Play
 
-    def run(ui)
-      ui.output(Messages.fizz_buzz)
-      number = ui.receive_as_number
+    def message
+      Messages.fizz_buzz
+    end
+
+    def run(input)
+      number = input.to_i
       fb = FizzBuzz.new(number)
-      result = fb.try
-      ui.output_with_break(result)
+      fb.try
     end
   end
 end
