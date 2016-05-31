@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-xdescribe 'Show fizzbuzz history' do
+describe 'Show fizzbuzz history' do
   it do
     input = InputStub.new([
       "1\n", # fizzbuzz
@@ -23,7 +23,7 @@ xdescribe 'Show fizzbuzz history' do
       <<-EOO
 2 => 2
 3 => fizz
-5 => fizzbuzz
+5 => buzz
       EOO
     )
   end

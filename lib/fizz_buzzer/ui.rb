@@ -12,8 +12,9 @@ module FizzBuzzer
       @output.print(string)
     end
 
-    def prompt(message)
+    def receive_input_with_message(message)
       output(message)
+      receive_input
     end
 
     def receive_input

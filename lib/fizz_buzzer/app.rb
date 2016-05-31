@@ -3,6 +3,8 @@ module FizzBuzzer
 
     def initialize(ui)
       @ui = ui
+      @history = History.new
+      @mode_selector = Modes::Selector
     end
 
     def start
@@ -11,27 +13,21 @@ module FizzBuzzer
     end
 
     def interact
-      return unless mode = select_mode(@ui.receive_input)
-
-      @ui.prompt(mode.message)
-      input = @ui.receive_input
-      result = mode.run(input)
-      @ui.output(result)
-
+      return unless mode = select_mode
+      interact_with_mode(mode)
       interact
     end
 
     private
 
-      def select_mode(input)
-        case input.to_i
-        when 0
-          nil
-        when 1
-          Play.new
-        #when 2
-        #  Record.new(Play.new)
-        end
+      def interact_with_mode(mode)
+        input = mode.receive_input(@ui)
+        result = mode.run(input)
+        @ui.output(result)
+      end
+
+      def select_mode
+        @mode_selector.select(@ui.receive_input, @history)
       end
   end
 end
