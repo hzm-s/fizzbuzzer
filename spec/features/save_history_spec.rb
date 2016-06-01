@@ -6,7 +6,7 @@ describe 'Save history' do
     output = OutputSpy.new
     ui = FizzBuzzer::UI.new(input, output)
 
-    app = FizzBuzzer::App.new(ui, store: StoreSpy.new)
+    app = FizzBuzzer::App.new(ui, store: StoreDouble.new)
     app.start
 
     outputs = output.buffers

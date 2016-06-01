@@ -4,7 +4,7 @@ require 'stringio'
 describe FizzBuzzer::History do
   describe '#save_to_store' do
     it do
-      store = StoreSpy.new
+      store = StoreDouble.new
       history = described_class.new
 
       history.record(2, 2)

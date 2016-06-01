@@ -14,6 +14,9 @@ describe 'Quit app' do
       <<-EOU
 メニューを選択してください
 1: FizzBuzzをスタート
+2: FizzBuzzの結果の履歴を表示
+3: FizzBuzzの結果の履歴を保存
+4: 保存されているFizzBuzzの結果の履歴を表示
 0: 終了
       EOU
     )

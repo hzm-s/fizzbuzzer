@@ -1,4 +1,4 @@
-class StoreSpy
+class StoreDouble
 
   def initialize
     @data = nil
