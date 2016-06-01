@@ -1,0 +1,1717 @@
+---
+:stats:
+  :codeLOC: 262
+  :testLOC: 340
+  :code_to_test_ratio: 1.3
+  :lines:
+  - :name: Libraries
+    :lines: 316
+    :loc: 262
+    :classes: 12
+    :methods: 46
+    :methods_per_class: 3
+    :loc_per_method: 3
+  - :name: Features specs
+    :lines: 114
+    :loc: 99
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Uncategorized specs
+    :lines: 348
+    :loc: 219
+    :classes: 4
+    :methods: 10
+    :methods_per_class: 2
+    :loc_per_method: 19
+  - :name: Fizz_buzzer specs
+    :lines: 25
+    :loc: 22
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Total
+    :lines: 803
+    :loc: 602
+    :classes: 16
+    :methods: 56
+    :methods_per_class: 3
+    :loc_per_method: 8
+:churn:
+  :changes:
+  - :file_path: lib/fizz_buzzer.rb
+    :times_changed: 25
+  - :file_path: lib/fizz_buzzer/app.rb
+    :times_changed: 24
+  - :file_path: fizz_buzzer
+    :times_changed: 13
+  - :file_path: spec/features/play_spec.rb
+    :times_changed: 12
+  - :file_path: lib/fizz_buzzer/modes/fizz_buzz.rb
+    :times_changed: 10
+  :class_churn:
+  - klass: &1
+      file: lib/fizz_buzzer/command_factory.rb
+      klass: CommandFactory
+    times_changed: 1
+  :method_churn:
+  - method: &5
+      file: lib/fizz_buzzer/command_factory.rb
+      klass: CommandFactory
+      method: CommandFactory#play_with_reocrd
+    times_changed: 1
+  - method: &3
+      file: lib/fizz_buzzer/command_factory.rb
+      klass: CommandFactory
+      method: CommandFactory#create
+    times_changed: 1
+  - method: &4
+      file: lib/fizz_buzzer/command_factory.rb
+      klass: CommandFactory
+      method: CommandFactory#quit
+    times_changed: 1
+  - method: &2
+      file: lib/fizz_buzzer/command_factory.rb
+      klass: CommandFactory
+      method: CommandFactory#initialize
+    times_changed: 1
+  - method: &6
+      file: lib/fizz_buzzer/command_factory.rb
+      klass: CommandFactory
+      method: CommandFactory#show_history
+    times_changed: 1
+  - method: &7
+      file: lib/fizz_buzzer/command_factory.rb
+      klass: CommandFactory
+      method: CommandFactory#save_history
+    times_changed: 1
+  - method: &8
+      file: lib/fizz_buzzer/command_factory.rb
+      klass: CommandFactory
+      method: CommandFactory#load_history
+    times_changed: 1
+  :changed_files:
+  - ".gitignore"
+  - lib/fizz_buzzer/command_factory.rb
+  :changed_classes:
+  - *1
+  :changed_methods:
+  - *2
+  - *3
+  - *4
+  - *5
+  - *6
+  - *7
+  - *8
+:flay:
+  :total_score: '0'
+  :matches: []
+:cane:
+  :total_violations: 16
+  :violations:
+    :line_style:
+    - :line: spec/spec_helper.rb:65
+      :description: Line is >80 characters (87)
+    - :line: spec/spec_helper.rb:66
+      :description: Line is >80 characters (92)
+    :documentation:
+    - :description: No README found
+    :comment:
+    - :line: lib/fizz_buzz.rb:1
+      :class_name: FizzBuzz
+    - :line: lib/fizz_buzzer/app.rb:2
+      :class_name: App
+    - :line: lib/fizz_buzzer/command_factory.rb:2
+      :class_name: CommandFactory
+    - :line: lib/fizz_buzzer/commands/base.rb:3
+      :class_name: Base
+    - :line: lib/fizz_buzzer/commands/load_history.rb:3
+      :class_name: LoadHistory
+    - :line: lib/fizz_buzzer/commands/play.rb:5
+      :class_name: Play
+    - :line: lib/fizz_buzzer/commands/record.rb:3
+      :class_name: Record
+    - :line: lib/fizz_buzzer/commands/save_history.rb:3
+      :class_name: SaveHistory
+    - :line: lib/fizz_buzzer/commands/show_history.rb:3
+      :class_name: ShowHistory
+    - :line: lib/fizz_buzzer/file_store.rb:2
+      :class_name: FileStore
+    - :line: lib/fizz_buzzer/history.rb:4
+      :class_name: History
+    - :line: lib/fizz_buzzer/messages.rb:1
+      :class_name: FizzBuzzer::Messages
+    - :line: lib/fizz_buzzer/ui.rb:2
+      :class_name: UI
+:reek:
+  :matches:
+  - :file_path: lib/fizz_buzz.rb
+    :code_smells:
+    - :method: FizzBuzz
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: lib/fizz_buzzer/app.rb
+    :code_smells:
+    - :method: FizzBuzzer::App
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 2
+  - :file_path: lib/fizz_buzzer/command_factory.rb
+    :code_smells:
+    - :method: FizzBuzzer::CommandFactory
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 2
+  - :file_path: lib/fizz_buzzer/commands/base.rb
+    :code_smells:
+    - :method: FizzBuzzer::Commands::Base
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 3
+    - :method: FizzBuzzer::Commands::Base#receive_input
+      :message: has unused parameter 'ui'
+      :type: UnusedParameters
+      :lines:
+      - 5
+    - :method: FizzBuzzer::Commands::Base#run
+      :message: has unused parameter 'input'
+      :type: UnusedParameters
+      :lines:
+      - 8
+  - :file_path: lib/fizz_buzzer/commands/load_history.rb
+    :code_smells:
+    - :method: FizzBuzzer::Commands::LoadHistory
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 3
+  - :file_path: lib/fizz_buzzer/commands/play.rb
+    :code_smells:
+    - :method: FizzBuzzer::Commands::Play
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 5
+    - :method: FizzBuzzer::Commands::Play#receive_input
+      :message: doesn't depend on instance state
+      :type: UtilityFunction
+      :lines:
+      - 7
+    - :method: FizzBuzzer::Commands::Play#run
+      :message: doesn't depend on instance state
+      :type: UtilityFunction
+      :lines:
+      - 12
+  - :file_path: lib/fizz_buzzer/commands/record.rb
+    :code_smells:
+    - :method: FizzBuzzer::Commands::Record
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 3
+  - :file_path: lib/fizz_buzzer/commands/save_history.rb
+    :code_smells:
+    - :method: FizzBuzzer::Commands::SaveHistory
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 3
+  - :file_path: lib/fizz_buzzer/commands/show_history.rb
+    :code_smells:
+    - :method: FizzBuzzer::Commands::ShowHistory
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 3
+  - :file_path: lib/fizz_buzzer/file_store.rb
+    :code_smells:
+    - :method: FizzBuzzer::FileStore
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 2
+  - :file_path: lib/fizz_buzzer/history.rb
+    :code_smells:
+    - :method: FizzBuzzer::History
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 4
+  - :file_path: lib/fizz_buzzer/ui.rb
+    :code_smells:
+    - :method: FizzBuzzer::UI
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 2
+    - :method: FizzBuzzer::UI#output
+      :message: refers to string more than self
+      :type: FeatureEnvy
+      :lines:
+      - 9
+:roodi:
+  :total:
+  - Found 0 errors.
+  :problems: []
+:saikuro:
+  :files:
+  - :classes:
+    - :class_name: FizzBuzz
+      :complexity: 8
+      :lines: 23
+      :methods:
+      - :name: FizzBuzz#try
+        :complexity: 4
+        :lines: 5
+      - :name: FizzBuzz#multiple_of?
+        :complexity: 2
+        :lines: 3
+      - :name: FizzBuzz#zero?
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzz#initialize
+        :complexity: 1
+        :lines: 2
+    :filename: lib/fizz_buzz.rb
+  - :classes:
+    - :class_name: FizzBuzzer
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::CommandFactory
+      :complexity: 7
+      :lines: 39
+      :methods:
+      - :name: FizzBuzzer::CommandFactory#load_history
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer::CommandFactory#save_history
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer::CommandFactory#show_history
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer::CommandFactory#initialize
+        :complexity: 1
+        :lines: 3
+      - :name: FizzBuzzer::CommandFactory#quit
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer::CommandFactory#create
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer::CommandFactory#play_with_reocrd
+        :complexity: 1
+        :lines: 2
+    :filename: lib/fizz_buzzer/command_factory.rb
+  - :classes:
+    - :class_name: FizzBuzzer
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::App
+      :complexity: 6
+      :lines: 30
+      :methods:
+      - :name: FizzBuzzer::App#interact
+        :complexity: 2
+        :lines: 4
+      - :name: FizzBuzzer::App#create_command
+        :complexity: 1
+        :lines: 3
+      - :name: FizzBuzzer::App#run_command
+        :complexity: 1
+        :lines: 4
+      - :name: FizzBuzzer::App#start
+        :complexity: 1
+        :lines: 3
+      - :name: FizzBuzzer::App#initialize
+        :complexity: 1
+        :lines: 3
+    :filename: lib/fizz_buzzer/app.rb
+  - :classes:
+    - :class_name: FizzBuzzer
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::History
+      :complexity: 5
+      :lines: 24
+      :methods:
+      - :name: FizzBuzzer::History#format
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer::History#save_to_store
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer::History#to_s
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer::History#record
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer::History#initialize
+        :complexity: 1
+        :lines: 2
+    - :class_name: 'FizzBuzzer::History::'
+      :complexity: 2
+      :lines: 9
+      :methods:
+      - :name: FizzBuzzer::History::#parse
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer::History::#load_from_store
+        :complexity: 1
+        :lines: 2
+    :filename: lib/fizz_buzzer/history.rb
+  - :classes:
+    - :class_name: FizzBuzzer
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::UI
+      :complexity: 5
+      :lines: 23
+      :methods:
+      - :name: FizzBuzzer::UI#output
+        :complexity: 2
+        :lines: 4
+      - :name: FizzBuzzer::UI#receive_input
+        :complexity: 1
+        :lines: 4
+      - :name: FizzBuzzer::UI#receive_input_with_message
+        :complexity: 1
+        :lines: 3
+      - :name: FizzBuzzer::UI#initialize
+        :complexity: 1
+        :lines: 3
+    :filename: lib/fizz_buzzer/ui.rb
+  - :classes:
+    - :class_name: FizzBuzzer
+      :complexity: 3
+      :lines: 14
+      :methods:
+      - :name: FizzBuzzer#saved
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer#fizz_buzz
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer#usage
+        :complexity: 1
+        :lines: 2
+    :filename: lib/fizz_buzzer/messages.rb
+  - :classes:
+    - :class_name: FizzBuzzer
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::Commands
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::Commands::Record
+      :complexity: 3
+      :lines: 16
+      :methods:
+      - :name: FizzBuzzer::Commands::Record#run
+        :complexity: 1
+        :lines: 4
+      - :name: FizzBuzzer::Commands::Record#receive_input
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer::Commands::Record#initialize
+        :complexity: 1
+        :lines: 3
+    :filename: lib/fizz_buzzer/commands/record.rb
+  - :classes:
+    - :class_name: FizzBuzzer
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::FileStore
+      :complexity: 3
+      :lines: 13
+      :methods:
+      - :name: FizzBuzzer::FileStore#load
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer::FileStore#save
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer::FileStore#initialize
+        :complexity: 1
+        :lines: 2
+    :filename: lib/fizz_buzzer/file_store.rb
+  - :classes:
+    - :class_name: FizzBuzzer
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::Commands
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::Commands::ShowHistory
+      :complexity: 2
+      :lines: 9
+      :methods:
+      - :name: FizzBuzzer::Commands::ShowHistory#run
+        :complexity: 1
+        :lines: 2
+      - :name: FizzBuzzer::Commands::ShowHistory#initialize
+        :complexity: 1
+        :lines: 2
+    :filename: lib/fizz_buzzer/commands/show_history.rb
+  - :classes:
+    - :class_name: FizzBuzzer
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::Commands
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::Commands::Play
+      :complexity: 2
+      :lines: 12
+      :methods:
+      - :name: FizzBuzzer::Commands::Play#run
+        :complexity: 1
+        :lines: 4
+      - :name: FizzBuzzer::Commands::Play#receive_input
+        :complexity: 1
+        :lines: 3
+    :filename: lib/fizz_buzzer/commands/play.rb
+  - :classes:
+    - :class_name: FizzBuzzer
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::Commands
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::Commands::LoadHistory
+      :complexity: 2
+      :lines: 10
+      :methods:
+      - :name: FizzBuzzer::Commands::LoadHistory#run
+        :complexity: 1
+        :lines: 3
+      - :name: FizzBuzzer::Commands::LoadHistory#initialize
+        :complexity: 1
+        :lines: 2
+    :filename: lib/fizz_buzzer/commands/load_history.rb
+  - :classes:
+    - :class_name: FizzBuzzer
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::Commands
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::Commands::Base
+      :complexity: 2
+      :lines: 7
+      :methods:
+      - :name: FizzBuzzer::Commands::Base#run
+        :complexity: 1
+        :lines: 1
+      - :name: FizzBuzzer::Commands::Base#receive_input
+        :complexity: 1
+        :lines: 1
+    :filename: lib/fizz_buzzer/commands/base.rb
+  - :classes:
+    - :class_name: FizzBuzzer
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::Commands
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::Commands::SaveHistory
+      :complexity: 2
+      :lines: 11
+      :methods:
+      - :name: FizzBuzzer::Commands::SaveHistory#run
+        :complexity: 1
+        :lines: 3
+      - :name: FizzBuzzer::Commands::SaveHistory#initialize
+        :complexity: 1
+        :lines: 3
+    :filename: lib/fizz_buzzer/commands/save_history.rb
+  - :classes:
+    - :class_name: FizzBuzzer
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: FizzBuzzer::Commands
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: lib/fizz_buzzer.rb
+  :classes:
+  - :name: FizzBuzz
+    :complexity: 8
+    :lines: 23
+    :defs:
+    - :name: FizzBuzz#initialize
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzz#try
+      :complexity: 4
+      :lines: 5
+    - :name: FizzBuzz#multiple_of?
+      :complexity: 2
+      :lines: 3
+    - :name: FizzBuzz#zero?
+      :complexity: 1
+      :lines: 2
+  - :name: FizzBuzzer::CommandFactory
+    :complexity: 7
+    :lines: 39
+    :defs:
+    - :name: FizzBuzzer::CommandFactory#initialize
+      :complexity: 1
+      :lines: 3
+    - :name: FizzBuzzer::CommandFactory#create
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer::CommandFactory#quit
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer::CommandFactory#play_with_reocrd
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer::CommandFactory#show_history
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer::CommandFactory#save_history
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer::CommandFactory#load_history
+      :complexity: 1
+      :lines: 2
+  - :name: FizzBuzzer::App
+    :complexity: 6
+    :lines: 30
+    :defs:
+    - :name: FizzBuzzer::App#initialize
+      :complexity: 1
+      :lines: 3
+    - :name: FizzBuzzer::App#start
+      :complexity: 1
+      :lines: 3
+    - :name: FizzBuzzer::App#interact
+      :complexity: 2
+      :lines: 4
+    - :name: FizzBuzzer::App#run_command
+      :complexity: 1
+      :lines: 4
+    - :name: FizzBuzzer::App#create_command
+      :complexity: 1
+      :lines: 3
+  - :name: FizzBuzzer::History
+    :complexity: 5
+    :lines: 24
+    :defs:
+    - :name: FizzBuzzer::History#initialize
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer::History#record
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer::History#to_s
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer::History#save_to_store
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer::History#format
+      :complexity: 1
+      :lines: 2
+  - :name: FizzBuzzer::UI
+    :complexity: 5
+    :lines: 23
+    :defs:
+    - :name: FizzBuzzer::UI#initialize
+      :complexity: 1
+      :lines: 3
+    - :name: FizzBuzzer::UI#output
+      :complexity: 2
+      :lines: 4
+    - :name: FizzBuzzer::UI#receive_input_with_message
+      :complexity: 1
+      :lines: 3
+    - :name: FizzBuzzer::UI#receive_input
+      :complexity: 1
+      :lines: 4
+  - :name: FizzBuzzer::Commands::Record
+    :complexity: 3
+    :lines: 16
+    :defs:
+    - :name: FizzBuzzer::Commands::Record#initialize
+      :complexity: 1
+      :lines: 3
+    - :name: FizzBuzzer::Commands::Record#receive_input
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer::Commands::Record#run
+      :complexity: 1
+      :lines: 4
+  - :name: FizzBuzzer::FileStore
+    :complexity: 3
+    :lines: 13
+    :defs:
+    - :name: FizzBuzzer::FileStore#initialize
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer::FileStore#save
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer::FileStore#load
+      :complexity: 1
+      :lines: 2
+  - :name: FizzBuzzer
+    :complexity: 3
+    :lines: 14
+    :defs:
+    - :name: FizzBuzzer#usage
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer#fizz_buzz
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer#saved
+      :complexity: 1
+      :lines: 2
+  - :name: 'FizzBuzzer::History::'
+    :complexity: 2
+    :lines: 9
+    :defs:
+    - :name: FizzBuzzer::History::#load_from_store
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer::History::#parse
+      :complexity: 1
+      :lines: 2
+  - :name: FizzBuzzer::Commands::SaveHistory
+    :complexity: 2
+    :lines: 11
+    :defs:
+    - :name: FizzBuzzer::Commands::SaveHistory#initialize
+      :complexity: 1
+      :lines: 3
+    - :name: FizzBuzzer::Commands::SaveHistory#run
+      :complexity: 1
+      :lines: 3
+  - :name: FizzBuzzer::Commands::Base
+    :complexity: 2
+    :lines: 7
+    :defs:
+    - :name: FizzBuzzer::Commands::Base#receive_input
+      :complexity: 1
+      :lines: 1
+    - :name: FizzBuzzer::Commands::Base#run
+      :complexity: 1
+      :lines: 1
+  - :name: FizzBuzzer::Commands::LoadHistory
+    :complexity: 2
+    :lines: 10
+    :defs:
+    - :name: FizzBuzzer::Commands::LoadHistory#initialize
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer::Commands::LoadHistory#run
+      :complexity: 1
+      :lines: 3
+  - :name: FizzBuzzer::Commands::Play
+    :complexity: 2
+    :lines: 12
+    :defs:
+    - :name: FizzBuzzer::Commands::Play#receive_input
+      :complexity: 1
+      :lines: 3
+    - :name: FizzBuzzer::Commands::Play#run
+      :complexity: 1
+      :lines: 4
+  - :name: FizzBuzzer::Commands::ShowHistory
+    :complexity: 2
+    :lines: 9
+    :defs:
+    - :name: FizzBuzzer::Commands::ShowHistory#initialize
+      :complexity: 1
+      :lines: 2
+    - :name: FizzBuzzer::Commands::ShowHistory#run
+      :complexity: 1
+      :lines: 2
+  - :name: FizzBuzzer
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer::Commands
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer::Commands
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer::Commands
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer::Commands
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer::Commands
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer::Commands
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer
+    :complexity: 0
+    :lines: 2
+  - :name: FizzBuzzer::Commands
+    :complexity: 0
+    :lines: 1
+  :methods:
+  - :name: FizzBuzz#try
+    :complexity: 4
+    :lines: 5
+  - :name: FizzBuzzer::UI#output
+    :complexity: 2
+    :lines: 4
+  - :name: FizzBuzzer::App#interact
+    :complexity: 2
+    :lines: 4
+  - :name: FizzBuzz#multiple_of?
+    :complexity: 2
+    :lines: 3
+  - :name: FizzBuzzer::Commands::LoadHistory#run
+    :complexity: 1
+    :lines: 3
+  - :name: FizzBuzzer::Commands::LoadHistory#initialize
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::Commands::Play#run
+    :complexity: 1
+    :lines: 4
+  - :name: FizzBuzzer::Commands::Play#receive_input
+    :complexity: 1
+    :lines: 3
+  - :name: FizzBuzzer::Commands::ShowHistory#run
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::Commands::ShowHistory#initialize
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::FileStore#load
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::FileStore#save
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::FileStore#initialize
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::Commands::Record#run
+    :complexity: 1
+    :lines: 4
+  - :name: FizzBuzzer::Commands::Record#receive_input
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::Commands::Record#initialize
+    :complexity: 1
+    :lines: 3
+  - :name: FizzBuzzer#saved
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer#fizz_buzz
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer#usage
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::UI#receive_input
+    :complexity: 1
+    :lines: 4
+  - :name: FizzBuzzer::UI#receive_input_with_message
+    :complexity: 1
+    :lines: 3
+  - :name: FizzBuzzer::UI#initialize
+    :complexity: 1
+    :lines: 3
+  - :name: FizzBuzzer::History::#parse
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::History::#load_from_store
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::History#format
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::History#save_to_store
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::History#to_s
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::History#record
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::History#initialize
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::App#create_command
+    :complexity: 1
+    :lines: 3
+  - :name: FizzBuzzer::App#run_command
+    :complexity: 1
+    :lines: 4
+  - :name: FizzBuzzer::App#start
+    :complexity: 1
+    :lines: 3
+  - :name: FizzBuzzer::App#initialize
+    :complexity: 1
+    :lines: 3
+  - :name: FizzBuzzer::CommandFactory#load_history
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::CommandFactory#save_history
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::CommandFactory#show_history
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::CommandFactory#play_with_reocrd
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::CommandFactory#quit
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::CommandFactory#create
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::CommandFactory#initialize
+    :complexity: 1
+    :lines: 3
+  - :name: FizzBuzz#zero?
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzz#initialize
+    :complexity: 1
+    :lines: 2
+  - :name: FizzBuzzer::Commands::SaveHistory#initialize
+    :complexity: 1
+    :lines: 3
+  - :name: FizzBuzzer::Commands::Base#run
+    :complexity: 1
+    :lines: 1
+  - :name: FizzBuzzer::Commands::Base#receive_input
+    :complexity: 1
+    :lines: 1
+  - :name: FizzBuzzer::Commands::SaveHistory#run
+    :complexity: 1
+    :lines: 3
+:hotspots:
+  files:
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fizz_buzz.rb
+      file_name: lib/fizz_buzz.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzz.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fizz_buzzer/ui.rb
+      file_name: lib/fizz_buzzer/ui.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/ui.rb", nil, nil]'
+    details:
+      reek: found 2 code smells
+      saikuro: average complexity is 1.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fizz_buzzer/commands/play.rb
+      file_name: lib/fizz_buzzer/commands/play.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/play.rb", nil, nil]'
+    details:
+      reek: found 3 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fizz_buzzer/commands/base.rb
+      file_name: lib/fizz_buzzer/commands/base.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/base.rb", nil, nil]'
+    details:
+      reek: found 3 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fizz_buzzer/app.rb
+      file_name: lib/fizz_buzzer/app.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/app.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 24 times)
+      reek: found 1 code smells
+      saikuro: average complexity is 1.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fizz_buzzer/commands/load_history.rb
+      file_name: lib/fizz_buzzer/commands/load_history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/load_history.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fizz_buzzer/commands/save_history.rb
+      file_name: lib/fizz_buzzer/commands/save_history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/save_history.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fizz_buzzer/commands/show_history.rb
+      file_name: lib/fizz_buzzer/commands/show_history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/show_history.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fizz_buzzer/file_store.rb
+      file_name: lib/fizz_buzzer/file_store.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/file_store.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fizz_buzzer/history.rb
+      file_name: lib/fizz_buzzer/history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/history.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fizz_buzzer/commands/record.rb
+      file_name: lib/fizz_buzzer/commands/record.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/record.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fizz_buzzer/messages.rb
+      file_name: lib/fizz_buzzer/messages.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/messages.rb", nil, nil]'
+    details:
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fizz_buzzer/command_factory.rb
+      file_name: lib/fizz_buzzer/command_factory.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/command_factory.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fizz_buzzer/modes/fizz_buzz.rb
+      file_name: lib/fizz_buzzer/modes/fizz_buzz.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/modes/fizz_buzz.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 10 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: spec/features/play_spec.rb
+      file_name: spec/features/play_spec.rb
+      line_number: 
+      hash_key: '["spec/features/play_spec.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 12 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: fizz_buzzer
+      file_name: fizz_buzzer
+      line_number: 
+      hash_key: '["fizz_buzzer", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 13 times)
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/fizz_buzzer.rb
+      file_name: lib/fizz_buzzer.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 25 times)
+  classes:
+  - location:
+      class_name: FizzBuzz
+      method_name: 
+      file_path: lib/fizz_buzz.rb
+      file_name: lib/fizz_buzz.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzz.rb", "FizzBuzz", nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 2.0
+  - location:
+      class_name: UI
+      method_name: 
+      file_path: lib/fizz_buzzer/ui.rb
+      file_name: lib/fizz_buzzer/ui.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/ui.rb", "UI", nil]'
+    details:
+      reek: found 2 code smells
+      saikuro: average complexity is 1.2
+  - location:
+      class_name: Play
+      method_name: 
+      file_path: lib/fizz_buzzer/commands/play.rb
+      file_name: lib/fizz_buzzer/commands/play.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/play.rb", "Play", nil]'
+    details:
+      reek: found 3 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: Base
+      method_name: 
+      file_path: lib/fizz_buzzer/commands/base.rb
+      file_name: lib/fizz_buzzer/commands/base.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/base.rb", "Base", nil]'
+    details:
+      reek: found 3 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: LoadHistory
+      method_name: 
+      file_path: lib/fizz_buzzer/commands/load_history.rb
+      file_name: lib/fizz_buzzer/commands/load_history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/load_history.rb", "LoadHistory", nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: SaveHistory
+      method_name: 
+      file_path: lib/fizz_buzzer/commands/save_history.rb
+      file_name: lib/fizz_buzzer/commands/save_history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/save_history.rb", "SaveHistory", nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: ShowHistory
+      method_name: 
+      file_path: lib/fizz_buzzer/commands/show_history.rb
+      file_name: lib/fizz_buzzer/commands/show_history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/show_history.rb", "ShowHistory", nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: FileStore
+      method_name: 
+      file_path: lib/fizz_buzzer/file_store.rb
+      file_name: lib/fizz_buzzer/file_store.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/file_store.rb", "FileStore", nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: App
+      method_name: 
+      file_path: lib/fizz_buzzer/app.rb
+      file_name: lib/fizz_buzzer/app.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/app.rb", "App", nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.2
+  - location:
+      class_name: History
+      method_name: 
+      file_path: lib/fizz_buzzer/history.rb
+      file_name: lib/fizz_buzzer/history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/history.rb", "History", nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: Record
+      method_name: 
+      file_path: lib/fizz_buzzer/commands/record.rb
+      file_name: lib/fizz_buzzer/commands/record.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/record.rb", "Record", nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: CommandFactory
+      method_name: 
+      file_path: lib/fizz_buzzer/command_factory.rb
+      file_name: lib/fizz_buzzer/command_factory.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/command_factory.rb", "CommandFactory", nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: FizzBuzzer
+      method_name: 
+      file_path: lib/fizz_buzzer/messages.rb
+      file_name: lib/fizz_buzzer/messages.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/messages.rb", "FizzBuzzer", nil]'
+    details:
+      saikuro: average complexity is 1.0
+  methods:
+  - location:
+      class_name: FizzBuzz
+      method_name: FizzBuzz#try
+      file_path: lib/fizz_buzz.rb
+      file_name: lib/fizz_buzz.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzz.rb", "FizzBuzz", "FizzBuzz#try"]'
+      simple_method_name: "#try"
+    details:
+      saikuro: complexity is 4.0
+  - location:
+      class_name: App
+      method_name: App#interact
+      file_path: lib/fizz_buzzer/app.rb
+      file_name: lib/fizz_buzzer/app.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/app.rb", "App", "App#interact"]'
+      simple_method_name: "#interact"
+    details:
+      saikuro: complexity is 2.0
+  - location:
+      class_name: FizzBuzz
+      method_name: FizzBuzz#multiple_of?
+      file_path: lib/fizz_buzz.rb
+      file_name: lib/fizz_buzz.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzz.rb", "FizzBuzz", "FizzBuzz#multiple_of?"]'
+      simple_method_name: "#multiple_of?"
+    details:
+      saikuro: complexity is 2.0
+  - location:
+      class_name: UI
+      method_name: UI#output
+      file_path: lib/fizz_buzzer/ui.rb
+      file_name: lib/fizz_buzzer/ui.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/ui.rb", "UI", "UI#output"]'
+      simple_method_name: "#output"
+    details:
+      reek: found 1 code smells
+      saikuro: complexity is 2.0
+  - location:
+      class_name: Base
+      method_name: Base#receive_input
+      file_path: lib/fizz_buzzer/commands/base.rb
+      file_name: lib/fizz_buzzer/commands/base.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/base.rb", "Base", "Base#receive_input"]'
+      simple_method_name: "#receive_input"
+    details:
+      reek: found 1 code smells
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Base
+      method_name: Base#run
+      file_path: lib/fizz_buzzer/commands/base.rb
+      file_name: lib/fizz_buzzer/commands/base.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/base.rb", "Base", "Base#run"]'
+      simple_method_name: "#run"
+    details:
+      reek: found 1 code smells
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Play
+      method_name: Play#receive_input
+      file_path: lib/fizz_buzzer/commands/play.rb
+      file_name: lib/fizz_buzzer/commands/play.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/play.rb", "Play", "Play#receive_input"]'
+      simple_method_name: "#receive_input"
+    details:
+      reek: found 1 code smells
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Play
+      method_name: Play#run
+      file_path: lib/fizz_buzzer/commands/play.rb
+      file_name: lib/fizz_buzzer/commands/play.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/play.rb", "Play", "Play#run"]'
+      simple_method_name: "#run"
+    details:
+      reek: found 1 code smells
+      saikuro: complexity is 1.0
+  - location:
+      class_name: CommandFactory
+      method_name: CommandFactory#create
+      file_path: lib/fizz_buzzer/command_factory.rb
+      file_name: lib/fizz_buzzer/command_factory.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/command_factory.rb", "CommandFactory", "CommandFactory#create"]'
+      simple_method_name: "#create"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: CommandFactory
+      method_name: CommandFactory#play_with_reocrd
+      file_path: lib/fizz_buzzer/command_factory.rb
+      file_name: lib/fizz_buzzer/command_factory.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/command_factory.rb", "CommandFactory", "CommandFactory#play_with_reocrd"]'
+      simple_method_name: "#play_with_reocrd"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: App
+      method_name: App#create_command
+      file_path: lib/fizz_buzzer/app.rb
+      file_name: lib/fizz_buzzer/app.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/app.rb", "App", "App#create_command"]'
+      simple_method_name: "#create_command"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: App
+      method_name: App#run_command
+      file_path: lib/fizz_buzzer/app.rb
+      file_name: lib/fizz_buzzer/app.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/app.rb", "App", "App#run_command"]'
+      simple_method_name: "#run_command"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: App
+      method_name: App#start
+      file_path: lib/fizz_buzzer/app.rb
+      file_name: lib/fizz_buzzer/app.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/app.rb", "App", "App#start"]'
+      simple_method_name: "#start"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: App
+      method_name: App#initialize
+      file_path: lib/fizz_buzzer/app.rb
+      file_name: lib/fizz_buzzer/app.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/app.rb", "App", "App#initialize"]'
+      simple_method_name: "#initialize"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: History
+      method_name: History#format
+      file_path: lib/fizz_buzzer/history.rb
+      file_name: lib/fizz_buzzer/history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/history.rb", "History", "History#format"]'
+      simple_method_name: "#format"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: History
+      method_name: History#save_to_store
+      file_path: lib/fizz_buzzer/history.rb
+      file_name: lib/fizz_buzzer/history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/history.rb", "History", "History#save_to_store"]'
+      simple_method_name: "#save_to_store"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: History
+      method_name: History#to_s
+      file_path: lib/fizz_buzzer/history.rb
+      file_name: lib/fizz_buzzer/history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/history.rb", "History", "History#to_s"]'
+      simple_method_name: "#to_s"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: History
+      method_name: History#record
+      file_path: lib/fizz_buzzer/history.rb
+      file_name: lib/fizz_buzzer/history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/history.rb", "History", "History#record"]'
+      simple_method_name: "#record"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: History
+      method_name: History#initialize
+      file_path: lib/fizz_buzzer/history.rb
+      file_name: lib/fizz_buzzer/history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/history.rb", "History", "History#initialize"]'
+      simple_method_name: "#initialize"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: History
+      method_name: "#parse"
+      file_path: lib/fizz_buzzer/history.rb
+      file_name: lib/fizz_buzzer/history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/history.rb", "History", "#parse"]'
+      simple_method_name: "#parse"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: History
+      method_name: "#load_from_store"
+      file_path: lib/fizz_buzzer/history.rb
+      file_name: lib/fizz_buzzer/history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/history.rb", "History", "#load_from_store"]'
+      simple_method_name: "#load_from_store"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: UI
+      method_name: UI#receive_input
+      file_path: lib/fizz_buzzer/ui.rb
+      file_name: lib/fizz_buzzer/ui.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/ui.rb", "UI", "UI#receive_input"]'
+      simple_method_name: "#receive_input"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: UI
+      method_name: UI#receive_input_with_message
+      file_path: lib/fizz_buzzer/ui.rb
+      file_name: lib/fizz_buzzer/ui.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/ui.rb", "UI", "UI#receive_input_with_message"]'
+      simple_method_name: "#receive_input_with_message"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: UI
+      method_name: UI#initialize
+      file_path: lib/fizz_buzzer/ui.rb
+      file_name: lib/fizz_buzzer/ui.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/ui.rb", "UI", "UI#initialize"]'
+      simple_method_name: "#initialize"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: FizzBuzzer
+      method_name: FizzBuzzer#saved
+      file_path: lib/fizz_buzzer/messages.rb
+      file_name: lib/fizz_buzzer/messages.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/messages.rb", "FizzBuzzer", "FizzBuzzer#saved"]'
+      simple_method_name: "#saved"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: FizzBuzzer
+      method_name: FizzBuzzer#fizz_buzz
+      file_path: lib/fizz_buzzer/messages.rb
+      file_name: lib/fizz_buzzer/messages.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/messages.rb", "FizzBuzzer", "FizzBuzzer#fizz_buzz"]'
+      simple_method_name: "#fizz_buzz"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: FizzBuzzer
+      method_name: FizzBuzzer#usage
+      file_path: lib/fizz_buzzer/messages.rb
+      file_name: lib/fizz_buzzer/messages.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/messages.rb", "FizzBuzzer", "FizzBuzzer#usage"]'
+      simple_method_name: "#usage"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Record
+      method_name: Record#run
+      file_path: lib/fizz_buzzer/commands/record.rb
+      file_name: lib/fizz_buzzer/commands/record.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/record.rb", "Record", "Record#run"]'
+      simple_method_name: "#run"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Record
+      method_name: Record#receive_input
+      file_path: lib/fizz_buzzer/commands/record.rb
+      file_name: lib/fizz_buzzer/commands/record.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/record.rb", "Record", "Record#receive_input"]'
+      simple_method_name: "#receive_input"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Record
+      method_name: Record#initialize
+      file_path: lib/fizz_buzzer/commands/record.rb
+      file_name: lib/fizz_buzzer/commands/record.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/record.rb", "Record", "Record#initialize"]'
+      simple_method_name: "#initialize"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: FileStore
+      method_name: FileStore#load
+      file_path: lib/fizz_buzzer/file_store.rb
+      file_name: lib/fizz_buzzer/file_store.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/file_store.rb", "FileStore", "FileStore#load"]'
+      simple_method_name: "#load"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: FileStore
+      method_name: FileStore#save
+      file_path: lib/fizz_buzzer/file_store.rb
+      file_name: lib/fizz_buzzer/file_store.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/file_store.rb", "FileStore", "FileStore#save"]'
+      simple_method_name: "#save"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: FileStore
+      method_name: FileStore#initialize
+      file_path: lib/fizz_buzzer/file_store.rb
+      file_name: lib/fizz_buzzer/file_store.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/file_store.rb", "FileStore", "FileStore#initialize"]'
+      simple_method_name: "#initialize"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: ShowHistory
+      method_name: ShowHistory#run
+      file_path: lib/fizz_buzzer/commands/show_history.rb
+      file_name: lib/fizz_buzzer/commands/show_history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/show_history.rb", "ShowHistory", "ShowHistory#run"]'
+      simple_method_name: "#run"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: ShowHistory
+      method_name: ShowHistory#initialize
+      file_path: lib/fizz_buzzer/commands/show_history.rb
+      file_name: lib/fizz_buzzer/commands/show_history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/show_history.rb", "ShowHistory", "ShowHistory#initialize"]'
+      simple_method_name: "#initialize"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: LoadHistory
+      method_name: LoadHistory#run
+      file_path: lib/fizz_buzzer/commands/load_history.rb
+      file_name: lib/fizz_buzzer/commands/load_history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/load_history.rb", "LoadHistory", "LoadHistory#run"]'
+      simple_method_name: "#run"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: LoadHistory
+      method_name: LoadHistory#initialize
+      file_path: lib/fizz_buzzer/commands/load_history.rb
+      file_name: lib/fizz_buzzer/commands/load_history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/load_history.rb", "LoadHistory", "LoadHistory#initialize"]'
+      simple_method_name: "#initialize"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: SaveHistory
+      method_name: SaveHistory#run
+      file_path: lib/fizz_buzzer/commands/save_history.rb
+      file_name: lib/fizz_buzzer/commands/save_history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/save_history.rb", "SaveHistory", "SaveHistory#run"]'
+      simple_method_name: "#run"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: SaveHistory
+      method_name: SaveHistory#initialize
+      file_path: lib/fizz_buzzer/commands/save_history.rb
+      file_name: lib/fizz_buzzer/commands/save_history.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/commands/save_history.rb", "SaveHistory", "SaveHistory#initialize"]'
+      simple_method_name: "#initialize"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: FizzBuzz
+      method_name: FizzBuzz#zero?
+      file_path: lib/fizz_buzz.rb
+      file_name: lib/fizz_buzz.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzz.rb", "FizzBuzz", "FizzBuzz#zero?"]'
+      simple_method_name: "#zero?"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: FizzBuzz
+      method_name: FizzBuzz#initialize
+      file_path: lib/fizz_buzz.rb
+      file_name: lib/fizz_buzz.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzz.rb", "FizzBuzz", "FizzBuzz#initialize"]'
+      simple_method_name: "#initialize"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: CommandFactory
+      method_name: CommandFactory#load_history
+      file_path: lib/fizz_buzzer/command_factory.rb
+      file_name: lib/fizz_buzzer/command_factory.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/command_factory.rb", "CommandFactory", "CommandFactory#load_history"]'
+      simple_method_name: "#load_history"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: CommandFactory
+      method_name: CommandFactory#save_history
+      file_path: lib/fizz_buzzer/command_factory.rb
+      file_name: lib/fizz_buzzer/command_factory.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/command_factory.rb", "CommandFactory", "CommandFactory#save_history"]'
+      simple_method_name: "#save_history"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: CommandFactory
+      method_name: CommandFactory#show_history
+      file_path: lib/fizz_buzzer/command_factory.rb
+      file_name: lib/fizz_buzzer/command_factory.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/command_factory.rb", "CommandFactory", "CommandFactory#show_history"]'
+      simple_method_name: "#show_history"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: CommandFactory
+      method_name: CommandFactory#initialize
+      file_path: lib/fizz_buzzer/command_factory.rb
+      file_name: lib/fizz_buzzer/command_factory.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/command_factory.rb", "CommandFactory", "CommandFactory#initialize"]'
+      simple_method_name: "#initialize"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: CommandFactory
+      method_name: CommandFactory#quit
+      file_path: lib/fizz_buzzer/command_factory.rb
+      file_name: lib/fizz_buzzer/command_factory.rb
+      line_number: 
+      hash_key: '["lib/fizz_buzzer/command_factory.rb", "CommandFactory", "CommandFactory#quit"]'
+      simple_method_name: "#quit"
+    details:
+      saikuro: complexity is 1.0
