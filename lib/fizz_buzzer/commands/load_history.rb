@@ -1,5 +1,5 @@
 module FizzBuzzer
-  module Modes
+  module Commands
     class LoadHistory
 
       def initialize(store)

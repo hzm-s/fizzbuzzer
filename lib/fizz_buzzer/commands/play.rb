@@ -1,7 +1,7 @@
 require 'fizz_buzz'
 
 module FizzBuzzer
-  module Modes
+  module Commands
     class Play
 
       def receive_input(ui)

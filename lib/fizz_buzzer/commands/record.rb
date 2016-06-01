@@ -1,18 +1,18 @@
 module FizzBuzzer
-  module Modes
+  module Commands
     class Record
 
-      def initialize(mode, history)
-        @mode = mode
+      def initialize(command, history)
+        @command = command
         @history = history
       end
 
       def receive_input(ui)
-        @mode.receive_input(ui)
+        @command.receive_input(ui)
       end
 
       def run(input)
-        result = @mode.run(input)
+        result = @command.run(input)
         @history.record(input, result)
         result
       end

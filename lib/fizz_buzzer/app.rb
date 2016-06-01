@@ -1,9 +1,9 @@
 module FizzBuzzer
   class App
 
-    def initialize(ui, history = History.new, store: FileStore.new)
+    def initialize(ui, history: History.new, store: FileStore.new)
       @ui = ui
-      @mode_selector = ModeSelector.new(history, store)
+      @command_factory = CommandFactory.new(history, store)
     end
 
     def start
@@ -12,22 +12,22 @@ module FizzBuzzer
     end
 
     def interact
-      return unless mode = select_mode
-      interact_with_mode(mode)
+      return unless command = create_command
+      run_command(command)
       interact
     end
 
     private
 
-      def interact_with_mode(mode)
-        input = mode.receive_input(@ui)
-        result = mode.run(input)
+      def run_command(command)
+        input = command.receive_input(@ui)
+        result = command.run(input)
         @ui.output(result)
       end
 
-      def select_mode
+      def create_command
         input = @ui.receive_input
-        @mode_selector.select(input)
+        @command_factory.create(input)
       end
   end
 end

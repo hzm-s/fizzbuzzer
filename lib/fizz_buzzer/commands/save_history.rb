@@ -1,5 +1,5 @@
 module FizzBuzzer
-  module Modes
+  module Commands
     class SaveHistory
 
       def initialize(history, store)
