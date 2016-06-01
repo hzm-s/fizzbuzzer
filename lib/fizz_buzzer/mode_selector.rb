@@ -3,6 +3,7 @@ module FizzBuzzer
 
     def initialize(history)
       @history = history
+      #@store = store
     end
 
     def select(input)
@@ -15,6 +16,7 @@ module FizzBuzzer
         Modes::ShowHistory.new(@history)
       when 3
         Modes::SaveHistory.new(@history)
+        #Modes::SaveHistory.new(@history, @store)
       end
     end
   end

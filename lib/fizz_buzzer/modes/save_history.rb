@@ -1,16 +1,17 @@
 module FizzBuzzer
   module Modes
-    class ShowHistory
+    class SaveHistory
 
-      def initialize(history)
+      def initialize(history, store)
         @history = history
+        @store = store
       end
 
       def receive_input(_)
       end
 
       def run(_)
-        @history.to_s
+        @history.save_to_store(@store)
       end
     end
   end

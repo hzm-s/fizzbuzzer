@@ -4,6 +4,7 @@ module FizzBuzzer
     def initialize(ui, history = History.new)
       @ui = ui
       @mode_selector = ModeSelector.new(history)
+      #@mode_selector = ModeSelector.new(history, store)
     end
 
     def start
