@@ -1,9 +1,9 @@
 module FizzBuzzer
   class ModeSelector
 
-    def initialize(history)
+    def initialize(history, store)
       @history = history
-      #@store = store
+      @store = store
     end
 
     def select(input)
@@ -15,8 +15,7 @@ module FizzBuzzer
       when 2
         Modes::ShowHistory.new(@history)
       when 3
-        Modes::SaveHistory.new(@history)
-        #Modes::SaveHistory.new(@history, @store)
+        Modes::SaveHistory.new(@history, @store)
       end
     end
   end

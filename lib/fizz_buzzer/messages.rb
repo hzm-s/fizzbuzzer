@@ -12,4 +12,8 @@ module FizzBuzzer::Messages
   def fizz_buzz
     "整数を入力してください\n"
   end
+
+  def saved
+    "履歴を保存しました\n"
+  end
 end

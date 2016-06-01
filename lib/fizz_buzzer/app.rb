@@ -1,10 +1,9 @@
 module FizzBuzzer
   class App
 
-    def initialize(ui, history = History.new)
+    def initialize(ui, history = History.new, store: FileStore.new)
       @ui = ui
-      @mode_selector = ModeSelector.new(history)
-      #@mode_selector = ModeSelector.new(history, store)
+      @mode_selector = ModeSelector.new(history, store)
     end
 
     def start

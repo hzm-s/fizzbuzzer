@@ -12,6 +12,7 @@ module FizzBuzzer
 
       def run(_)
         @history.save_to_store(@store)
+        Messages.saved
       end
     end
   end
