@@ -1,22 +1,15 @@
 require 'spec_helper'
 
-describe 'Save History' do
+describe 'Save history' do
   it do
-    ui = TestUI.new(
-      1, # fizzbuzz mode
-      15,
-      3, # save history
-      0
-    )
+    input = InputStub.new(["3\n", "0\n"])
+    output = OutputSpy.new
+    ui = FizzBuzzer::UI.new(input, output)
 
-    app = App.new(ui)
+    app = FizzBuzzer::App.new(ui, store: StoreDouble.new)
     app.start
 
-    expect(ui.buffers).to eq([
-      Messages.usage,
-      "整数を入力してください\n",
-      "fizzbuzz\n",
-      "FizzBuzzの履歴を保存しました\n"
-    ])
+    outputs = output.buffers
+    expect(outputs[1]).to eq("履歴を保存しました\n")
   end
 end

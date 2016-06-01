@@ -1,10 +1,10 @@
 require 'spec_helper'
-require 'fizz_buzz_number'
+require 'fizz_buzz'
 
-describe FizzBuzzNumber do
+describe FizzBuzz do
   subject do
-    fbn = described_class.new(number)
-    fbn.fizzbuzz
+    fb = described_class.new(number)
+    fb.try
   end
 
   context 'given 0' do

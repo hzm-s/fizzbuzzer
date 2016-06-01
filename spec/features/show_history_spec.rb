@@ -1,39 +1,30 @@
 require 'spec_helper'
 
-describe 'Show FizzBuzz history' do
+describe 'Show fizzbuzz history' do
   it do
-    ui = TestUI.new(
-      1, # fizzbuzz mode
-      2,
-      1, # fizzbuzz mode
-      3,
-      1, # fizzbuzz mode
-      5,
-      1, # fizzbuzz mode
-      15,
-      2, # show history mode
-      0, # quit
-    )
+    input = InputStub.new([
+      "1\n", # fizzbuzz
+      "2\n",
+      "1\n", # fizzbuzz
+      "3\n",
+      "1\n", # fizzbuzz
+      "5\n",
+      "2\n", # show history
+      "0\n"
+    ])
+    output = OutputSpy.new
+    ui = FizzBuzzer::UI.new(input, output)
 
-    app = App.new(ui)
+    app = FizzBuzzer::App.new(ui)
     app.start
 
-    expect(ui.buffers).to eq([
-      Messages.usage,
-      "整数を入力してください\n",
-      "2\n",
-      "整数を入力してください\n",
-      "fizz\n",
-      "整数を入力してください\n",
-      "buzz\n",
-      "整数を入力してください\n",
-      "fizzbuzz\n",
-      <<-EOH
+    outputs = output.buffers
+    expect(outputs[7]).to eq(
+      <<-EOO
 2 => 2
 3 => fizz
 5 => buzz
-15 => fizzbuzz
-      EOH
-    ])
+      EOO
+    )
   end
 end

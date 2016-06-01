@@ -1,32 +1,24 @@
 require 'spec_helper'
 
-describe 'Play FizzBuzz' do
+describe 'Play fizzbuzz' do
   it do
-    ui = TestUI.new(
-      1, # fizzbuzz mode
-      2,
-      1, # fizzbuzz mode
-      3,
-      1, # fizzbuzz mode
-      5,
-      1, # fizzbuzz mode
-      15,
-      0, # quit
-    )
+    input = InputStub.new([
+      "1\n",
+      "2\n",
+      "1\n",
+      "15\n",
+      "0\n",
+    ])
+    output = OutputSpy.new
+    ui = FizzBuzzer::UI.new(input, output)
 
-    app = App.new(ui)
+    app = FizzBuzzer::App.new(ui)
     app.start
 
-    expect(ui.buffers).to eq([
-      Messages.usage,
-      "整数を入力してください\n",
-      "2\n",
-      "整数を入力してください\n",
-      "fizz\n",
-      "整数を入力してください\n",
-      "buzz\n",
-      "整数を入力してください\n",
-      "fizzbuzz\n"
-    ])
+    outputs = output.buffers
+    expect(outputs[1]).to eq("整数を入力してください\n")
+    expect(outputs[2]).to eq("2\n")
+    expect(outputs[3]).to eq("整数を入力してください\n")
+    expect(outputs[4]).to eq("fizzbuzz\n")
   end
 end

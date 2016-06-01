@@ -1,10 +1,10 @@
-class FizzBuzzNumber
+class FizzBuzz
 
   def initialize(number)
     @number = number
   end
 
-  def fizzbuzz
+  def try
     return 'fizzbuzz' if multiple_of?(15)
     return 'fizz' if multiple_of?(3)
     return 'buzz' if multiple_of?(5)
