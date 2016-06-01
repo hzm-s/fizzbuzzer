@@ -1,13 +1,10 @@
 module FizzBuzzer
   module Commands
-    class SaveHistory
+    class SaveHistory < Base
 
       def initialize(history, store)
         @history = history
         @store = store
-      end
-
-      def receive_input(_)
       end
 
       def run(_)

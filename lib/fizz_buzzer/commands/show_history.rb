@@ -1,12 +1,9 @@
 module FizzBuzzer
   module Commands
-    class ShowHistory
+    class ShowHistory < Base
 
       def initialize(history)
         @history = history
-      end
-
-      def receive_input(_)
       end
 
       def run(_)

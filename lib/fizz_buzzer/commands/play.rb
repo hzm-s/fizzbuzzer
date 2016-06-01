@@ -2,7 +2,7 @@ require 'fizz_buzz'
 
 module FizzBuzzer
   module Commands
-    class Play
+    class Play < Base
 
       def receive_input(ui)
         message = Messages.fizz_buzz

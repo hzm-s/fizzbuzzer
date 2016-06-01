@@ -1,6 +1,6 @@
 module FizzBuzzer
   module Commands
-    class Record
+    class Record < Base
 
       def initialize(command, history)
         @command = command

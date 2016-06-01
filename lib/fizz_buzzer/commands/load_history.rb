@@ -1,12 +1,9 @@
 module FizzBuzzer
   module Commands
-    class LoadHistory
+    class LoadHistory < Base
 
       def initialize(store)
         @store = store
-      end
-
-      def receive_input(_)
       end
 
       def run(_)
