@@ -1,5 +1,12 @@
 module FizzBuzzer
   class CommandFactory
+    CREATION_METHODS = {
+      '0' => :quit,
+      '1' => :play_with_reocrd,
+      '2' => :show_history,
+      '3' => :save_history,
+      '4' => :load_history,
+    }
 
     def initialize(history, store)
       @history = history
@@ -7,18 +14,29 @@ module FizzBuzzer
     end
 
     def create(input)
-      case input.to_i
-      when 0
+      self.send(CREATION_METHODS[input])
+    end
+
+    private
+
+      def quit
         nil
-      when 1
+      end
+
+      def play_with_reocrd
         Commands::Record.new(Commands::Play.new, @history)
-      when 2
+      end
+
+      def show_history
         Commands::ShowHistory.new(@history)
-      when 3
+      end
+
+      def save_history
         Commands::SaveHistory.new(@history, @store)
-      when 4
+      end
+
+      def load_history
         Commands::LoadHistory.new(@store)
       end
-    end
   end
 end
