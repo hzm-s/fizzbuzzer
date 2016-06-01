@@ -1,10 +1,9 @@
 module FizzBuzzer
   class App
 
-    def initialize(ui)
+    def initialize(ui, history = History.new)
       @ui = ui
-      @history = History.new
-      @mode_selector = Modes::Selector
+      @mode_selector = ModeSelector.new(history)
     end
 
     def start
@@ -27,7 +26,8 @@ module FizzBuzzer
       end
 
       def select_mode
-        @mode_selector.select(@ui.receive_input, @history)
+        input = @ui.receive_input
+        @mode_selector.select(input)
       end
   end
 end
