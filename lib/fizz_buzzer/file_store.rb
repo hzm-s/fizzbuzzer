@@ -8,5 +8,9 @@ module FizzBuzzer
     def save(data)
       File.write(@path, data)
     end
+
+    def load
+      File.read(@path)
+    end
   end
 end

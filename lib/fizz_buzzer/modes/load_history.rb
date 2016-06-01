@@ -9,8 +9,9 @@ module FizzBuzzer
       def receive_input(_)
       end
 
-      def run(_ = nil)
-        History.load_from_store(@store)
+      def run(_)
+        history = History.load_from_store(@store)
+        history.to_s
       end
     end
   end

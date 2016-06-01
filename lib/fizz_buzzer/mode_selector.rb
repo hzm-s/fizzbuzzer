@@ -17,7 +17,7 @@ module FizzBuzzer
       when 3
         Modes::SaveHistory.new(@history, @store)
       when 4
-        Modes::ShowHistory.new(Modes::LoadHistory.new(@store))
+        Modes::LoadHistory.new(@store)
       end
     end
   end
