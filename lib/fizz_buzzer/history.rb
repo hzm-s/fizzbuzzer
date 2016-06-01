@@ -2,9 +2,19 @@ require 'delegate'
 
 module FizzBuzzer
   class History < SimpleDelegator
+    class << self
 
-    def initialize
-      super([])
+      def load_from_store(store)
+        parse(store.load)
+      end
+
+      def parse(data)
+        new(data.split("\n"))
+      end
+    end
+
+    def initialize(entries = [])
+      super(entries)
     end
 
     def record(input, result)

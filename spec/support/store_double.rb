@@ -1,7 +1,7 @@
 class StoreDouble
 
-  def initialize
-    @data = nil
+  def initialize(data = nil)
+    @data = data
   end
 
   def save(data)

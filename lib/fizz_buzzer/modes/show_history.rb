@@ -10,7 +10,11 @@ module FizzBuzzer
       end
 
       def run(_)
-        @history.to_s
+        if @history.respond_to?(:run)
+          @history.run
+        else
+          @history.to_s
+        end
       end
     end
   end
