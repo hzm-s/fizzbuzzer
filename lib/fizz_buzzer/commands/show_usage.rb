@@ -1,8 +1,8 @@
 module FizzBuzzer
   module Commands
-    class ShowUsage
+    class ShowUsage < Base
 
-      def run
+      def run(_)
         Messages.usage
       end
     end
