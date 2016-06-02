@@ -529,13 +529,13 @@ table td.score {
     </tr>
     
     <tr>
-      <td>FizzBuzzer::UI#output</td>
+      <td>FizzBuzzer::App#interact</td>
       <td>2</td>
       <td>4</td>
     </tr>
     
     <tr>
-      <td>FizzBuzzer::App#interact</td>
+      <td>FizzBuzzer::UI#output</td>
       <td>2</td>
       <td>4</td>
     </tr>
@@ -547,27 +547,33 @@ table td.score {
     </tr>
     
     <tr>
-      <td>FizzBuzzer::Commands::LoadHistory#run</td>
-      <td>1</td>
-      <td>3</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer::Commands::LoadHistory#initialize</td>
-      <td>1</td>
-      <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer::Commands::Play#run</td>
-      <td>1</td>
-      <td>4</td>
-    </tr>
-    
-    <tr>
       <td>FizzBuzzer::Commands::Play#receive_input</td>
       <td>1</td>
       <td>3</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::Commands::SaveHistory#run</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::Commands::SaveHistory#initialize</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::Commands::Base#run</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::Commands::Base#receive_input</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     
     <tr>
@@ -637,24 +643,6 @@ table td.score {
     </tr>
     
     <tr>
-      <td>FizzBuzzer::UI#receive_input</td>
-      <td>1</td>
-      <td>4</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer::UI#receive_input_with_message</td>
-      <td>1</td>
-      <td>3</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer::UI#initialize</td>
-      <td>1</td>
-      <td>3</td>
-    </tr>
-    
-    <tr>
       <td>FizzBuzzer::History::#parse</td>
       <td>1</td>
       <td>2</td>
@@ -697,6 +685,24 @@ table td.score {
     </tr>
     
     <tr>
+      <td>FizzBuzzer::UI#receive_input</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::UI#receive_input_with_message</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::UI#initialize</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    
+    <tr>
       <td>FizzBuzzer::App#create_command</td>
       <td>1</td>
       <td>3</td>
@@ -718,6 +724,48 @@ table td.score {
       <td>FizzBuzzer::App#initialize</td>
       <td>1</td>
       <td>3</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzz#zero?</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::CommandFactory#initialize</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::Commands::LoadHistory#run</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::Commands::LoadHistory#initialize</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::Commands::Play#run</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzz#initialize</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::CommandFactory#show_usage</td>
+      <td>1</td>
+      <td>2</td>
     </tr>
     
     <tr>
@@ -751,51 +799,21 @@ table td.score {
     </tr>
     
     <tr>
+      <td>FizzBuzzer::CommandFactory#lookup_creation_method</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
       <td>FizzBuzzer::CommandFactory#create</td>
       <td>1</td>
-      <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer::CommandFactory#initialize</td>
-      <td>1</td>
       <td>3</td>
     </tr>
     
     <tr>
-      <td>FizzBuzz#zero?</td>
+      <td>FizzBuzzer::Commands::ShowUsage#run</td>
       <td>1</td>
       <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzz#initialize</td>
-      <td>1</td>
-      <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer::Commands::SaveHistory#initialize</td>
-      <td>1</td>
-      <td>3</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer::Commands::Base#run</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer::Commands::Base#receive_input</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer::Commands::SaveHistory#run</td>
-      <td>1</td>
-      <td>3</td>
     </tr>
     
   </table>
@@ -811,15 +829,15 @@ table td.score {
     </tr>
     
     <tr>
-      <td>FizzBuzz</td>
-      <td>8</td>
-      <td>23</td>
+      <td>FizzBuzzer::CommandFactory</td>
+      <td>9</td>
+      <td>48</td>
     </tr>
     
     <tr>
-      <td>FizzBuzzer::CommandFactory</td>
-      <td>7</td>
-      <td>39</td>
+      <td>FizzBuzz</td>
+      <td>8</td>
+      <td>23</td>
     </tr>
     
     <tr>
@@ -829,15 +847,15 @@ table td.score {
     </tr>
     
     <tr>
-      <td>FizzBuzzer::History</td>
-      <td>5</td>
-      <td>24</td>
-    </tr>
-    
-    <tr>
       <td>FizzBuzzer::UI</td>
       <td>5</td>
       <td>23</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::History</td>
+      <td>5</td>
+      <td>24</td>
     </tr>
     
     <tr>
@@ -859,21 +877,15 @@ table td.score {
     </tr>
     
     <tr>
-      <td>FizzBuzzer::History::</td>
-      <td>2</td>
-      <td>9</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer::Commands::SaveHistory</td>
-      <td>2</td>
-      <td>11</td>
-    </tr>
-    
-    <tr>
       <td>FizzBuzzer::Commands::Base</td>
       <td>2</td>
       <td>7</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::Commands::ShowHistory</td>
+      <td>2</td>
+      <td>9</td>
     </tr>
     
     <tr>
@@ -889,81 +901,21 @@ table td.score {
     </tr>
     
     <tr>
-      <td>FizzBuzzer::Commands::ShowHistory</td>
+      <td>FizzBuzzer::Commands::SaveHistory</td>
+      <td>2</td>
+      <td>11</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::History::</td>
       <td>2</td>
       <td>9</td>
     </tr>
     
     <tr>
-      <td>FizzBuzzer</td>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer</td>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer</td>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer</td>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer::Commands</td>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer</td>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer::Commands</td>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer</td>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer::Commands</td>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer</td>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer::Commands</td>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer</td>
-      <td>0</td>
-      <td>2</td>
+      <td>FizzBuzzer::Commands::ShowUsage</td>
+      <td>1</td>
+      <td>5</td>
     </tr>
     
     <tr>
@@ -980,12 +932,6 @@ table td.score {
     
     <tr>
       <td>FizzBuzzer</td>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-    
-    <tr>
-      <td>FizzBuzzer::Commands</td>
       <td>0</td>
       <td>2</td>
     </tr>
@@ -1008,10 +954,227 @@ table td.score {
       <td>1</td>
     </tr>
     
+    <tr>
+      <td>FizzBuzzer</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::Commands</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::Commands</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::Commands</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::Commands</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::Commands</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer::Commands</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    
+    <tr>
+      <td>FizzBuzzer</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    
   </table>
 
 
 <h2>Analyzed Files</h2>
+
+  
+      
+  
+      
+        <h3><a href='file:///Users/h4zime/repositories/fizz_buzzer/lib/fizz_buzzer/command_factory.rb'>lib/fizz_buzzer/command_factory.rb</a></h3>
+        <h4>Class : FizzBuzzer::CommandFactory</h4>
+        <h5>Total complexity : 9</h5>
+        <h5>Total lines : 48</h5>
+        <table>
+            <tr>
+              <th>Method</th>
+              <th>Complexity</th>
+              <th># Lines</th>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::CommandFactory#initialize
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                3
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::CommandFactory#load_history
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                2
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::CommandFactory#save_history
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                2
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::CommandFactory#show_history
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                2
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::CommandFactory#play_with_reocrd
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                2
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::CommandFactory#quit
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                2
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::CommandFactory#lookup_creation_method
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                2
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::CommandFactory#create
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                3
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::CommandFactory#show_usage
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                2
+              </td>
+            </tr>
+          
+        </table>
+      
+  
 
   
       
@@ -1065,109 +1228,6 @@ table td.score {
             <tr>
               <td>
                 FizzBuzz#initialize
-              </td>
-              <td>
-                1
-              </td>
-              <td>
-                2
-              </td>
-            </tr>
-          
-        </table>
-      
-  
-
-  
-      
-  
-      
-        <h3><a href='file:///Users/h4zime/repositories/fizz_buzzer/lib/fizz_buzzer/command_factory.rb'>lib/fizz_buzzer/command_factory.rb</a></h3>
-        <h4>Class : FizzBuzzer::CommandFactory</h4>
-        <h5>Total complexity : 7</h5>
-        <h5>Total lines : 39</h5>
-        <table>
-            <tr>
-              <th>Method</th>
-              <th>Complexity</th>
-              <th># Lines</th>
-            </tr>
-          
-            <tr>
-              <td>
-                FizzBuzzer::CommandFactory#load_history
-              </td>
-              <td>
-                1
-              </td>
-              <td>
-                2
-              </td>
-            </tr>
-          
-            <tr>
-              <td>
-                FizzBuzzer::CommandFactory#save_history
-              </td>
-              <td>
-                1
-              </td>
-              <td>
-                2
-              </td>
-            </tr>
-          
-            <tr>
-              <td>
-                FizzBuzzer::CommandFactory#show_history
-              </td>
-              <td>
-                1
-              </td>
-              <td>
-                2
-              </td>
-            </tr>
-          
-            <tr>
-              <td>
-                FizzBuzzer::CommandFactory#initialize
-              </td>
-              <td>
-                1
-              </td>
-              <td>
-                3
-              </td>
-            </tr>
-          
-            <tr>
-              <td>
-                FizzBuzzer::CommandFactory#quit
-              </td>
-              <td>
-                1
-              </td>
-              <td>
-                2
-              </td>
-            </tr>
-          
-            <tr>
-              <td>
-                FizzBuzzer::CommandFactory#create
-              </td>
-              <td>
-                1
-              </td>
-              <td>
-                2
-              </td>
-            </tr>
-          
-            <tr>
-              <td>
-                FizzBuzzer::CommandFactory#play_with_reocrd
               </td>
               <td>
                 1
@@ -1247,6 +1307,73 @@ table td.score {
             <tr>
               <td>
                 FizzBuzzer::App#initialize
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                3
+              </td>
+            </tr>
+          
+        </table>
+      
+  
+
+  
+      
+  
+      
+        <h3><a href='file:///Users/h4zime/repositories/fizz_buzzer/lib/fizz_buzzer/ui.rb'>lib/fizz_buzzer/ui.rb</a></h3>
+        <h4>Class : FizzBuzzer::UI</h4>
+        <h5>Total complexity : 5</h5>
+        <h5>Total lines : 23</h5>
+        <table>
+            <tr>
+              <th>Method</th>
+              <th>Complexity</th>
+              <th># Lines</th>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::UI#output
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                4
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::UI#receive_input
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                4
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::UI#receive_input_with_message
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                3
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::UI#initialize
               </td>
               <td>
                 1
@@ -1371,73 +1498,6 @@ table td.score {
               </td>
               <td>
                 2
-              </td>
-            </tr>
-          
-        </table>
-      
-  
-
-  
-      
-  
-      
-        <h3><a href='file:///Users/h4zime/repositories/fizz_buzzer/lib/fizz_buzzer/ui.rb'>lib/fizz_buzzer/ui.rb</a></h3>
-        <h4>Class : FizzBuzzer::UI</h4>
-        <h5>Total complexity : 5</h5>
-        <h5>Total lines : 23</h5>
-        <table>
-            <tr>
-              <th>Method</th>
-              <th>Complexity</th>
-              <th># Lines</th>
-            </tr>
-          
-            <tr>
-              <td>
-                FizzBuzzer::UI#output
-              </td>
-              <td>
-                2
-              </td>
-              <td>
-                4
-              </td>
-            </tr>
-          
-            <tr>
-              <td>
-                FizzBuzzer::UI#receive_input
-              </td>
-              <td>
-                1
-              </td>
-              <td>
-                4
-              </td>
-            </tr>
-          
-            <tr>
-              <td>
-                FizzBuzzer::UI#receive_input_with_message
-              </td>
-              <td>
-                1
-              </td>
-              <td>
-                3
-              </td>
-            </tr>
-          
-            <tr>
-              <td>
-                FizzBuzzer::UI#initialize
-              </td>
-              <td>
-                1
-              </td>
-              <td>
-                3
               </td>
             </tr>
           
@@ -1661,6 +1721,96 @@ table td.score {
       
   
       
+        <h3><a href='file:///Users/h4zime/repositories/fizz_buzzer/lib/fizz_buzzer/commands/base.rb'>lib/fizz_buzzer/commands/base.rb</a></h3>
+        <h4>Class : FizzBuzzer::Commands::Base</h4>
+        <h5>Total complexity : 2</h5>
+        <h5>Total lines : 7</h5>
+        <table>
+            <tr>
+              <th>Method</th>
+              <th>Complexity</th>
+              <th># Lines</th>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::Commands::Base#run
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                1
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::Commands::Base#receive_input
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                1
+              </td>
+            </tr>
+          
+        </table>
+      
+  
+
+  
+      
+  
+      
+  
+      
+        <h3><a href='file:///Users/h4zime/repositories/fizz_buzzer/lib/fizz_buzzer/commands/save_history.rb'>lib/fizz_buzzer/commands/save_history.rb</a></h3>
+        <h4>Class : FizzBuzzer::Commands::SaveHistory</h4>
+        <h5>Total complexity : 2</h5>
+        <h5>Total lines : 11</h5>
+        <table>
+            <tr>
+              <th>Method</th>
+              <th>Complexity</th>
+              <th># Lines</th>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::Commands::SaveHistory#run
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                3
+              </td>
+            </tr>
+          
+            <tr>
+              <td>
+                FizzBuzzer::Commands::SaveHistory#initialize
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                3
+              </td>
+            </tr>
+          
+        </table>
+      
+  
+
+  
+      
+  
+      
+  
+      
         <h3><a href='file:///Users/h4zime/repositories/fizz_buzzer/lib/fizz_buzzer/commands/play.rb'>lib/fizz_buzzer/commands/play.rb</a></h3>
         <h4>Class : FizzBuzzer::Commands::Play</h4>
         <h5>Total complexity : 2</h5>
@@ -1751,10 +1901,10 @@ table td.score {
       
   
       
-        <h3><a href='file:///Users/h4zime/repositories/fizz_buzzer/lib/fizz_buzzer/commands/base.rb'>lib/fizz_buzzer/commands/base.rb</a></h3>
-        <h4>Class : FizzBuzzer::Commands::Base</h4>
-        <h5>Total complexity : 2</h5>
-        <h5>Total lines : 7</h5>
+        <h3><a href='file:///Users/h4zime/repositories/fizz_buzzer/lib/fizz_buzzer/commands/show_usage.rb'>lib/fizz_buzzer/commands/show_usage.rb</a></h3>
+        <h4>Class : FizzBuzzer::Commands::ShowUsage</h4>
+        <h5>Total complexity : 1</h5>
+        <h5>Total lines : 5</h5>
         <table>
             <tr>
               <th>Method</th>
@@ -1764,70 +1914,13 @@ table td.score {
           
             <tr>
               <td>
-                FizzBuzzer::Commands::Base#run
+                FizzBuzzer::Commands::ShowUsage#run
               </td>
               <td>
                 1
               </td>
               <td>
-                1
-              </td>
-            </tr>
-          
-            <tr>
-              <td>
-                FizzBuzzer::Commands::Base#receive_input
-              </td>
-              <td>
-                1
-              </td>
-              <td>
-                1
-              </td>
-            </tr>
-          
-        </table>
-      
-  
-
-  
-      
-  
-      
-  
-      
-        <h3><a href='file:///Users/h4zime/repositories/fizz_buzzer/lib/fizz_buzzer/commands/save_history.rb'>lib/fizz_buzzer/commands/save_history.rb</a></h3>
-        <h4>Class : FizzBuzzer::Commands::SaveHistory</h4>
-        <h5>Total complexity : 2</h5>
-        <h5>Total lines : 11</h5>
-        <table>
-            <tr>
-              <th>Method</th>
-              <th>Complexity</th>
-              <th># Lines</th>
-            </tr>
-          
-            <tr>
-              <td>
-                FizzBuzzer::Commands::SaveHistory#run
-              </td>
-              <td>
-                1
-              </td>
-              <td>
-                3
-              </td>
-            </tr>
-          
-            <tr>
-              <td>
-                FizzBuzzer::Commands::SaveHistory#initialize
-              </td>
-              <td>
-                1
-              </td>
-              <td>
-                3
+                2
               </td>
             </tr>
           
@@ -1842,7 +1935,7 @@ table td.score {
   
 
 
-<p>Generated on 2016-06-02 00:52:04 +0900</p>
+<p>Generated on 2016-06-02 21:55:01 +0900</p>
 
     </div>
 

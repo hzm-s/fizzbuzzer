@@ -516,7 +516,7 @@ table td.score {
 <p><a href="http://github.com/troessner/reek">Reek</a> detects common code smells in ruby code.</p>
 
 <div id="graph_container"></div>
-<script language="javascript" src="reek.js?1464796324" type="text/javascript"></script>
+<script language="javascript" src="reek.js?1464872101" type="text/javascript"></script>
 
 <table>
   <tr>
@@ -570,6 +570,34 @@ table td.score {
         </td>
         <td>
           IrresponsibleModule
+        </td>
+      </tr>
+      
+    
+      <tr class='dark'>
+        <td><a href='file:///Users/h4zime/repositories/fizz_buzzer/lib/fizz_buzzer/command_factory.rb'>lib/fizz_buzzer/command_factory.rb</a></td>
+        <td>
+          FizzBuzzer::CommandFactory#lookup_creation_method
+        </td>
+        <td>
+          doesn't depend on instance state
+        </td>
+        <td>
+          UtilityFunction
+        </td>
+      </tr>
+      
+    
+      <tr class='light'>
+        <td><a href='file:///Users/h4zime/repositories/fizz_buzzer/lib/fizz_buzzer/command_factory.rb'>lib/fizz_buzzer/command_factory.rb</a></td>
+        <td>
+          FizzBuzzer::CommandFactory#show_usage
+        </td>
+        <td>
+          doesn't depend on instance state
+        </td>
+        <td>
+          UtilityFunction
         </td>
       </tr>
       
@@ -729,6 +757,36 @@ table td.score {
   
     
       <tr class='dark'>
+        <td><a href='file:///Users/h4zime/repositories/fizz_buzzer/lib/fizz_buzzer/commands/show_usage.rb'>lib/fizz_buzzer/commands/show_usage.rb</a></td>
+        <td>
+          FizzBuzzer::Commands::ShowUsage
+        </td>
+        <td>
+          has no descriptive comment
+        </td>
+        <td>
+          IrresponsibleModule
+        </td>
+      </tr>
+      
+    
+      <tr class='light'>
+        <td><a href='file:///Users/h4zime/repositories/fizz_buzzer/lib/fizz_buzzer/commands/show_usage.rb'>lib/fizz_buzzer/commands/show_usage.rb</a></td>
+        <td>
+          FizzBuzzer::Commands::ShowUsage#run
+        </td>
+        <td>
+          doesn't depend on instance state
+        </td>
+        <td>
+          UtilityFunction
+        </td>
+      </tr>
+      
+    
+  
+    
+      <tr class='dark'>
         <td><a href='file:///Users/h4zime/repositories/fizz_buzzer/lib/fizz_buzzer/file_store.rb'>lib/fizz_buzzer/file_store.rb</a></td>
         <td>
           FizzBuzzer::FileStore
@@ -792,7 +850,7 @@ table td.score {
 
 </table>
 
-<p>Generated on 2016-06-02 00:52:04 +0900</p>
+<p>Generated on 2016-06-02 21:55:01 +0900</p>
 
     </div>
 

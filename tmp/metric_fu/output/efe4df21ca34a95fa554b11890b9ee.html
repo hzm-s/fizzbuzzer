@@ -299,7 +299,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n17" name="n17">17</a></span>      <span class="predefined-constant">self</span>.send(<span class="constant">CREATION_METHODS</span>[input])
+  <div class="code"><pre><span class="line-numbers"><a href="#n17" name="n17">17</a></span>      creation_method = lookup_creation_method(input)
 </pre></div>
 </div>
 
@@ -315,7 +315,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n18" name="n18">18</a></span>    <span class="keyword">end</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n18" name="n18">18</a></span>      <span class="predefined-constant">self</span>.send(creation_method)
 </pre></div>
 </div>
 
@@ -331,7 +331,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n19" name="n19">19</a></span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n19" name="n19">19</a></span>    <span class="keyword">end</span>
 </pre></div>
 </div>
 
@@ -347,7 +347,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>    private
+  <div class="code"><pre><span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>
 </pre></div>
 </div>
 
@@ -363,7 +363,93 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n21" name="n21">21</a></span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n21" name="n21">21</a></span>    private
+</pre></div>
+</div>
+
+          </td>
+         </tr>
+         
+        
+        <tr>
+          <td valign='top'>
+           
+              &nbsp;
+          
+          </td>
+          <td valign='top'>
+            <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n22" name="n22">22</a></span>
+</pre></div>
+</div>
+
+          </td>
+         </tr>
+         
+        
+        <tr>
+          <td valign='top'>
+           
+             <ul>
+               
+                 <li>UtilityFunction - doesn't depend on instance state &raquo; reek</li>
+               
+                 <li>Complexity 1 &raquo; saikuro</li>
+               
+            </ul>
+          
+          </td>
+          <td valign='top'>
+            <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n23" name="n23">23</a></span>      <span class="keyword">def</span> <span class="function">lookup_creation_method</span>(input)
+</pre></div>
+</div>
+
+          </td>
+         </tr>
+         
+        
+        <tr>
+          <td valign='top'>
+           
+              &nbsp;
+          
+          </td>
+          <td valign='top'>
+            <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n24" name="n24">24</a></span>        <span class="constant">CREATION_METHODS</span>.fetch(input, <span class="symbol">:show_usage</span>)
+</pre></div>
+</div>
+
+          </td>
+         </tr>
+         
+        
+        <tr>
+          <td valign='top'>
+           
+              &nbsp;
+          
+          </td>
+          <td valign='top'>
+            <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n25" name="n25">25</a></span>      <span class="keyword">end</span>
+</pre></div>
+</div>
+
+          </td>
+         </tr>
+         
+        
+        <tr>
+          <td valign='top'>
+           
+              &nbsp;
+          
+          </td>
+          <td valign='top'>
+            <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n26" name="n26">26</a></span>
 </pre></div>
 </div>
 
@@ -383,7 +469,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n22" name="n22">22</a></span>      <span class="keyword">def</span> <span class="function">quit</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n27" name="n27">27</a></span>      <span class="keyword">def</span> <span class="function">quit</span>
 </pre></div>
 </div>
 
@@ -399,7 +485,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n23" name="n23">23</a></span>        <span class="predefined-constant">nil</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n28" name="n28">28</a></span>        <span class="predefined-constant">nil</span>
 </pre></div>
 </div>
 
@@ -415,7 +501,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n24" name="n24">24</a></span>      <span class="keyword">end</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n29" name="n29">29</a></span>      <span class="keyword">end</span>
 </pre></div>
 </div>
 
@@ -431,7 +517,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n25" name="n25">25</a></span>
+  <div class="code"><pre><span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>
 </pre></div>
 </div>
 
@@ -451,7 +537,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n26" name="n26">26</a></span>      <span class="keyword">def</span> <span class="function">play_with_reocrd</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n31" name="n31">31</a></span>      <span class="keyword">def</span> <span class="function">play_with_reocrd</span>
 </pre></div>
 </div>
 
@@ -467,7 +553,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n27" name="n27">27</a></span>        <span class="constant">Commands</span>::<span class="constant">Record</span>.new(<span class="constant">Commands</span>::<span class="constant">Play</span>.new, <span class="instance-variable">@history</span>)
+  <div class="code"><pre><span class="line-numbers"><a href="#n32" name="n32">32</a></span>        <span class="constant">Commands</span>::<span class="constant">Record</span>.new(<span class="constant">Commands</span>::<span class="constant">Play</span>.new, <span class="instance-variable">@history</span>)
 </pre></div>
 </div>
 
@@ -483,7 +569,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n28" name="n28">28</a></span>      <span class="keyword">end</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n33" name="n33">33</a></span>      <span class="keyword">end</span>
 </pre></div>
 </div>
 
@@ -499,7 +585,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n29" name="n29">29</a></span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n34" name="n34">34</a></span>
 </pre></div>
 </div>
 
@@ -519,7 +605,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>      <span class="keyword">def</span> <span class="function">show_history</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n35" name="n35">35</a></span>      <span class="keyword">def</span> <span class="function">show_history</span>
 </pre></div>
 </div>
 
@@ -535,7 +621,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n31" name="n31">31</a></span>        <span class="constant">Commands</span>::<span class="constant">ShowHistory</span>.new(<span class="instance-variable">@history</span>)
+  <div class="code"><pre><span class="line-numbers"><a href="#n36" name="n36">36</a></span>        <span class="constant">Commands</span>::<span class="constant">ShowHistory</span>.new(<span class="instance-variable">@history</span>)
 </pre></div>
 </div>
 
@@ -551,7 +637,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n32" name="n32">32</a></span>      <span class="keyword">end</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n37" name="n37">37</a></span>      <span class="keyword">end</span>
 </pre></div>
 </div>
 
@@ -567,7 +653,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n33" name="n33">33</a></span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n38" name="n38">38</a></span>
 </pre></div>
 </div>
 
@@ -587,7 +673,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n34" name="n34">34</a></span>      <span class="keyword">def</span> <span class="function">save_history</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n39" name="n39">39</a></span>      <span class="keyword">def</span> <span class="function">save_history</span>
 </pre></div>
 </div>
 
@@ -603,7 +689,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n35" name="n35">35</a></span>        <span class="constant">Commands</span>::<span class="constant">SaveHistory</span>.new(<span class="instance-variable">@history</span>, <span class="instance-variable">@store</span>)
+  <div class="code"><pre><span class="line-numbers"><strong><a href="#n40" name="n40">40</a></strong></span>        <span class="constant">Commands</span>::<span class="constant">SaveHistory</span>.new(<span class="instance-variable">@history</span>, <span class="instance-variable">@store</span>)
 </pre></div>
 </div>
 
@@ -619,7 +705,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n36" name="n36">36</a></span>      <span class="keyword">end</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n41" name="n41">41</a></span>      <span class="keyword">end</span>
 </pre></div>
 </div>
 
@@ -635,7 +721,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n37" name="n37">37</a></span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n42" name="n42">42</a></span>
 </pre></div>
 </div>
 
@@ -655,7 +741,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n38" name="n38">38</a></span>      <span class="keyword">def</span> <span class="function">load_history</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n43" name="n43">43</a></span>      <span class="keyword">def</span> <span class="function">load_history</span>
 </pre></div>
 </div>
 
@@ -671,7 +757,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n39" name="n39">39</a></span>        <span class="constant">Commands</span>::<span class="constant">LoadHistory</span>.new(<span class="instance-variable">@store</span>)
+  <div class="code"><pre><span class="line-numbers"><a href="#n44" name="n44">44</a></span>        <span class="constant">Commands</span>::<span class="constant">LoadHistory</span>.new(<span class="instance-variable">@store</span>)
 </pre></div>
 </div>
 
@@ -687,7 +773,7 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><strong><a href="#n40" name="n40">40</a></strong></span>      <span class="keyword">end</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n45" name="n45">45</a></span>      <span class="keyword">end</span>
 </pre></div>
 </div>
 
@@ -703,7 +789,29 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n41" name="n41">41</a></span>  <span class="keyword">end</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n46" name="n46">46</a></span>
+</pre></div>
+</div>
+
+          </td>
+         </tr>
+         
+        
+        <tr>
+          <td valign='top'>
+           
+             <ul>
+               
+                 <li>UtilityFunction - doesn't depend on instance state &raquo; reek</li>
+               
+                 <li>Complexity 1 &raquo; saikuro</li>
+               
+            </ul>
+          
+          </td>
+          <td valign='top'>
+            <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n47" name="n47">47</a></span>      <span class="keyword">def</span> <span class="function">show_usage</span>
 </pre></div>
 </div>
 
@@ -719,7 +827,55 @@
           </td>
           <td valign='top'>
             <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n42" name="n42">42</a></span><span class="keyword">end</span>
+  <div class="code"><pre><span class="line-numbers"><a href="#n48" name="n48">48</a></span>        <span class="constant">Commands</span>::<span class="constant">ShowUsage</span>.new
+</pre></div>
+</div>
+
+          </td>
+         </tr>
+         
+        
+        <tr>
+          <td valign='top'>
+           
+              &nbsp;
+          
+          </td>
+          <td valign='top'>
+            <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n49" name="n49">49</a></span>      <span class="keyword">end</span>
+</pre></div>
+</div>
+
+          </td>
+         </tr>
+         
+        
+        <tr>
+          <td valign='top'>
+           
+              &nbsp;
+          
+          </td>
+          <td valign='top'>
+            <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><strong><a href="#n50" name="n50">50</a></strong></span>  <span class="keyword">end</span>
+</pre></div>
+</div>
+
+          </td>
+         </tr>
+         
+        
+        <tr>
+          <td valign='top'>
+           
+              &nbsp;
+          
+          </td>
+          <td valign='top'>
+            <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n51" name="n51">51</a></span><span class="keyword">end</span>
 </pre></div>
 </div>
 
