@@ -14,10 +14,15 @@ module FizzBuzzer
     end
 
     def create(input)
-      self.send(CREATION_METHODS[input])
+      creation_method = lookup_creation_method(input)
+      self.send(creation_method)
     end
 
     private
+
+      def lookup_creation_method(input)
+        CREATION_METHODS.fetch(input, :show_usage)
+      end
 
       def quit
         nil
@@ -37,6 +42,10 @@ module FizzBuzzer
 
       def load_history
         Commands::LoadHistory.new(@store)
+      end
+
+      def show_usage
+        Commands::ShowUsage.new
       end
   end
 end
